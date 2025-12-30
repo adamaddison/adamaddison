@@ -1,8 +1,12 @@
+using adamaddison.Interfaces;
+using adamaddison.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.AddScoped<>();
+builder.Services.AddScoped(typeof(IHttpContentService<>), typeof(HttpContentService<>));
+builder.Services.AddScoped<IPageService, PageService>();
 
 var app = builder.Build();
 
