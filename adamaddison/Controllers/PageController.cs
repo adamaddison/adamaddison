@@ -14,6 +14,7 @@ namespace adamaddison.Controllers
         }
 
         [HttpGet]
+        [Route("")]
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
