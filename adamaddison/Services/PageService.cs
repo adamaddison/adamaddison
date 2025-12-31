@@ -25,28 +25,38 @@ public class PageService : IPageService
         _getAboutViewModel = getAboutViewModel;
     }
 
-    public async AboutViewModel GetAboutContent()
+    public async Task<AboutViewModel> GetAboutContentAsync()
     {
-        throw new NotImplementedException();
+        AboutViewModel vm = await _getAboutViewModel.GetContentFromUrlAsync("");
+
+        return vm;
     }
 
-    public ExperienceViewModel GetExperienceContent()
+    public async Task<ExperienceViewModel> GetExperienceContentAsync()
     {
-        throw new NotImplementedException();
+        ExperienceViewModel vm = await _getExperienceViewModel.GetContentFromUrlAsync("");
+
+        return vm;
     }
 
-    public HomeViewModel GetHomeContent()
+    public async Task<HomeViewModel> GetHomeContentAsync()
     {
-        throw new NotImplementedException();
+        HomeViewModel vm = await _getHomeViewModel.GetContentFromUrlAsync("");
+
+        return vm;
     }
 
-    public PortfolioViewModel GetPortfolioContent()
+    public async Task<PortfolioViewModel> GetPortfolioContentAsync()
     {
-        throw new NotImplementedException();
+        PortfolioViewModel vm = await _getPortfolioViewModel.GetContentFromUrlAsync("");
+
+        return vm;
     }
 
-    public WorkAndEducationViewModel GetWorkAndEducationContent()
+    public async Task<WorkAndEducationViewModel> GetWorkAndEducationContentAsync()
     {
-        throw new NotImplementedException();
+        WorkAndEducationViewModel vm = await _getWorkAndEducationViewModel.GetContentFromUrlAsync("");
+
+        return vm;
     }
 }

@@ -5,9 +5,9 @@ namespace adamaddison.Interfaces;
 
 public interface IPageService
 {
-    public HomeViewModel GetHomeContent();
-    public PortfolioViewModel GetPortfolioContent();
-    public WorkAndEducationViewModel GetWorkAndEducationContent();
-    public ExperienceViewModel GetExperienceContent();
-    public AboutViewModel GetAboutContent();
+    public Task<HomeViewModel> GetHomeContentAsync();
+    public Task<PortfolioViewModel> GetPortfolioContentAsync();
+    public Task<WorkAndEducationViewModel> GetWorkAndEducationContentAsync();
+    public Task<ExperienceViewModel> GetExperienceContentAsync();
+    public Task<AboutViewModel> GetAboutContentAsync();
 }

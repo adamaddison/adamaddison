@@ -5,5 +5,5 @@ namespace adamaddison.Interfaces;
 
 public interface IHttpContentService<T>
 {
-    public Task<T> GetContentFromUrl(string Url);
+    public Task<T> GetContentFromUrlAsync(string Url);
 }

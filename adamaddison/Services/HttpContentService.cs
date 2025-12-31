@@ -15,7 +15,7 @@ public class HttpContentService<T> : IHttpContentService<T>
         _logger = logger;
     }
 
-    public async Task<T> GetContentFromUrl(string Url)
+    public async Task<T> GetContentFromUrlAsync(string Url)
     {
         T viewModel;
         try
