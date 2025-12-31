@@ -19,8 +19,4 @@
     <ProjectReference Include="..\adamaddison\adamaddison.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ServiceTests/" />
-  </ItemGroup>
-
 </Project>
