@@ -34,7 +34,7 @@ public class PageService : IPageService
         PortfolioContentUrl = config["aaPortfolioUrl"] ?? string.Empty;
         WorkAndEducationContentUrl = config["aaWorkAndEducationUrl"] ?? string.Empty;
         ExperienceContentUrl = config["aaExperienceUrl"] ?? string.Empty;
-        AboutContentUrl = config["adamaddisonTestBlobUrl"] ?? string.Empty;
+        AboutContentUrl = config["aaAboutUrl"] ?? string.Empty;
     }
 
     public async Task<AboutViewModel> GetAboutContentAsync()

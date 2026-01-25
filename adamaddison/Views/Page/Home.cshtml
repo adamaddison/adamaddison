@@ -1,0 +1,21 @@
+﻿@model HomeViewModel
+
+<h1 class="appHeading textLight">Home</h1>
+
+<div id="profileImageAndContactTextContainer" class="infoContainerLight">
+    <img src="@Model.ProfileImageUrl" id="profileImage" />
+        <div id="contactTable">
+            @{var i = 0;}
+            @foreach(var contact in Model.ContactInfoList)
+            {
+                <div class="twoColumnRowLight @(i == 0 ? "firstRow" : "")">
+                    <div class="twoColumnRowCol1">@contact.Key</div>
+                    <div class="twoColumnRowCol2">@contact.Value</div>
+                </div>
+                i+=1;
+            }
+        </div>
+</div>
+<div id="bioTextContainer" class="infoContainerLight">
+    <p id="bioText" class="textLight">@Model.BioText</p>
+</div>

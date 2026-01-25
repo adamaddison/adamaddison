@@ -1,5 +1,7 @@
 ﻿@model AboutViewModel
 
-<h class="textLight" id="aboutHeader">About</h>
-<img src="@Model.ImageUrls[0]" class="aboutImage" />
-<p class="textLight">@Model.Description</p>
+<h class="textLight appHeading" id="aboutHeader">About</h>
+<div class="infoContainerLight">
+    <img src="@Model.ImageUrls[0]" class="aboutImage" />
+    <p class="textLight">@Model.Description</p>
+</div>
