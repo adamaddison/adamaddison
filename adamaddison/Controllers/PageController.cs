@@ -18,9 +18,19 @@ namespace adamaddison.Controllers
         [Route("Home")]
         public async Task<IActionResult> Home()
         {
-            var vm = await _pageService.GetHomeContentAsync();
+            try
+            {
+                var vm = await _pageService.GetHomeContentAsync();
 
-            return View(vm);
+                return View(vm); 
+            }
+            catch(Exception)
+            {
+                ViewData["TryCatchError"] = "Something went wrong. Please try again later.";
+
+                return View();
+            }
+            
         }
 
         [HttpGet]

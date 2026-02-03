@@ -1,4 +1,12 @@
-﻿<div id="menuBarContainer" class="menuBarContainerLight">
+﻿@{
+    var currentPage = ViewContext?.RouteData?.Values["action"]?.ToString() ?? string.Empty;
+    if(currentPage.Contains("WorkAndEducation"))
+    {
+        currentPage = "Work & Education";
+    }
+}
+
+<div id="menuBarContainer" class="menuBarContainerLight">
     <div class="menuItem firstMenuItem textLight">
         <a asp-controller="Page" asp-action="Home">
             <div class="menuItemValueLight">
@@ -34,4 +42,42 @@
             </div>
         </a>
     </div>
+</div>
+
+ <div id="menuBarMobilePopoutBackground"></div>
+ <div id="menuBarMobilePopout" class="infoContainerLight">
+        <a asp-controller="Page" asp-action="Home">
+            <div class="menuItemMobileLight firstMenuItemMobile">
+                <span class="textLight">Home</span>
+            </div>
+        </a>
+        <a asp-controller="Page" asp-action="Portfolio">
+            <div class="menuItemMobileLight">
+                <span class="textLight">Portfolio</span>
+            </div>
+        </a>
+        <a asp-controller="Page" asp-action="WorkAndEducation">
+            <div class="menuItemMobileLight">
+                <span class="textLight">Work & Education</span>
+            </div>
+        </a>
+        <a asp-controller="Page" asp-action="Experience">
+            <div class="menuItemMobileLight">
+                <span class="textLight">Experience</span>
+            </div>
+        </a>
+        <a asp-controller="Page" asp-action="About">
+            <div class="menuItemMobileLight">
+                <span class="textLight">About</span>
+            </div>
+        </a>
+</div>
+
+<div id="menuBarContainerMobile" class="menuBarContainerMobileLight">
+        <div id="menuBarMobileCurrentPageText" class="textLight">@currentPage</div>
+        <div id="menuBarMobileShowPopoutButton" class="aaButtonLight" onclick="togglePopoutMenu()">
+            <div class="menuIconLine menuIconLineLight firstMenuLine"></div>
+            <div class="menuIconLine menuIconLineLight"></div>
+            <div class="menuIconLine menuIconLineLight"></div>
+        </div>
 </div>

@@ -1,7 +1,13 @@
 ﻿@model HomeViewModel
 
-<h1 class="appHeading textLight">Home</h1>
-
+@if(!string.IsNullOrEmpty(ViewData["TryCatchError"]?.ToString()))
+{
+    <div class="alert alert-danger">
+        @ViewData["TryCatchError"]?.ToString()
+    </div>
+}
+else
+{
 <div id="profileImageAndContactTextContainer" class="infoContainerLight">
     <img src="@Model.ProfileImageUrl" id="profileImage" />
         <div id="contactTable">
@@ -10,7 +16,14 @@
             {
                 <div class="twoColumnRowLight @(i == 0 ? "firstRow" : "")">
                     <div class="twoColumnRowCol1">@contact.Key</div>
-                    <div class="twoColumnRowCol2">@contact.Value</div>
+                    @if(contact.Value.Contains(".com") && !contact.Key.Contains("Email"))
+                    {
+                        <div class="twoColumnRowCol2"><a href="https://www.@contact.Value" target="_blank">@contact.Value</a></div>
+                    }
+                    else
+                    {
+                        <div class="twoColumnRowCol2">@contact.Value</div>
+                    }
                 </div>
                 i+=1;
             }
@@ -19,3 +32,4 @@
 <div id="bioTextContainer" class="infoContainerLight">
     <p id="bioText" class="textLight">@Model.BioText</p>
 </div>
+}

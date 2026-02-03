@@ -1,4 +1,10 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let showPopoutMenu = false;
 
-// Write your JavaScript code.
+function togglePopoutMenu()
+{
+    showPopoutMenu = !showPopoutMenu;
+    showPopoutMenu ? $('#menuBarMobilePopout').addClass('showMenuBarMobilePopout')
+                   : $('#menuBarMobilePopout').removeClass('showMenuBarMobilePopout');
+    showPopoutMenu ? $('#menuBarMobilePopoutBackground').addClass('opacityFull')
+                   : $('#menuBarMobilePopoutBackground').removeClass('opacityFull');
+}
