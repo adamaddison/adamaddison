@@ -1,7 +1,16 @@
 ﻿@model ExperienceViewModel
 
-<h1 class="textLight">Experience</h1>
+@if(!string.IsNullOrEmpty(ViewData["TryCatchError"]?.ToString()))
+{
+    <div class="alert alert-danger">
+        @ViewData["TryCatchError"]?.ToString()
+    </div>
+}
+else
+{
+    <h1 class="textLight">Experience</h1>
 
-<div class="infoContainerLight">
-    <p class="textLight">@Model.SkillsList[0]</p>
-</div>
+    <div class="infoContainerLight">
+        <p class="textLight">@Model.SkillsList[0]</p>
+    </div>
+}

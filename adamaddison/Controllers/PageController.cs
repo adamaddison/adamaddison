@@ -1,4 +1,5 @@
 using adamaddison.Interfaces;
+using adamaddison.Models.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace adamaddison.Controllers
@@ -26,47 +27,82 @@ namespace adamaddison.Controllers
             }
             catch(Exception)
             {
-                ViewData["TryCatchError"] = "Something went wrong. Please try again later.";
+                ViewData["TryCatchError"] = SiteConstants.PageLoadErrorMessage;
 
                 return View();
             }
-            
         }
 
         [HttpGet]
         [Route("Portfolio")]
         public async Task<IActionResult> Portfolio()
         {
-            var vm = await _pageService.GetPortfolioContentAsync();
+            try
+            {
+                var vm = await _pageService.GetPortfolioContentAsync();
 
-            return View(vm);
+                return View(vm);
+            }
+            catch(Exception)
+            {
+                ViewData["TryCatchError"] = SiteConstants.PageLoadErrorMessage;
+
+                return View();
+            }
         }
 
         [HttpGet]
         [Route("WorkAndEducation")]
         public async Task<IActionResult> WorkAndEducation()
         {
-            var vm = await _pageService.GetWorkAndEducationContentAsync();
+            try
+            {
+                var vm = await _pageService.GetWorkAndEducationContentAsync();
 
-            return View(vm);
+                return View(vm);
+            }
+            catch(Exception)
+            {
+                ViewData["TryCatchError"] = SiteConstants.PageLoadErrorMessage;
+
+                return View();
+            }
         }
 
         [HttpGet]
         [Route("Experience")]
         public async Task<IActionResult> Experience()
         {
-            var vm = await _pageService.GetExperienceContentAsync();
+            try
+            {
+                var vm = await _pageService.GetExperienceContentAsync();
 
-            return View(vm);
+                return View(vm);
+            }
+            catch(Exception)
+            {
+                ViewData["TryCatchError"] = SiteConstants.PageLoadErrorMessage;
+
+                return View();
+            }
         }
 
         [HttpGet]
         [Route("About")]
         public async Task<IActionResult> About()
         {
-            var vm = await _pageService.GetAboutContentAsync();
+            try
+            {
+                var vm = await _pageService.GetAboutContentAsync();
 
-            return View(vm);
+                return View(vm);
+            }
+            catch(Exception)
+            {
+                ViewData["TryCatchError"] = SiteConstants.PageLoadErrorMessage;
+
+                return View();
+            }
         }
     }
 }

@@ -1,4 +1,13 @@
 ﻿@model WorkAndEducationViewModel
 
-<h1 class="textLight">Work and Education</h1>
-<p class="textLight">@Model.CompaniesAndSchools[0].Name</p>
+@if(!string.IsNullOrEmpty(ViewData["TryCatchError"]?.ToString()))
+{
+    <div class="alert alert-danger">
+        @ViewData["TryCatchError"]?.ToString()
+    </div>
+}
+else
+{
+    <h1 class="textLight">Work and Education</h1>
+    <p class="textLight">@Model.CompaniesAndSchools[0].Name</p>
+}

@@ -1,4 +1,13 @@
 ﻿@model PortfolioViewModel
 
-<h1 class="textLight">Portfolio</h1>
-<p class="textLight">@Model.Projects[0].Title</p>
+@if(!string.IsNullOrEmpty(ViewData["TryCatchError"]?.ToString()))
+{
+    <div class="alert alert-danger">
+        @ViewData["TryCatchError"]?.ToString()
+    </div>
+}
+else
+{
+    <h1 class="textLight">Portfolio</h1>
+    <p class="textLight">@Model.Projects[0].Title</p>
+}

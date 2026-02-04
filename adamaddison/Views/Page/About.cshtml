@@ -1,7 +1,16 @@
 ﻿@model AboutViewModel
 
-<h class="textLight appHeading" id="aboutHeader">About</h>
-<div class="infoContainerLight">
-    <img src="@Model.ImageUrls[0]" class="aboutImage" />
-    <p class="textLight">@Model.Description</p>
-</div>
+@if(!string.IsNullOrEmpty(ViewData["TryCatchError"]?.ToString()))
+{
+    <div class="alert alert-danger">
+        @ViewData["TryCatchError"]?.ToString()
+    </div>
+}
+else
+{
+    <h class="textLight appHeading" id="aboutHeader">About</h>
+    <div class="infoContainerLight">
+        <img src="@Model.ImageUrls[0]" class="aboutImage" />
+        <p class="textLight">@Model.Description</p>
+    </div>
+}
