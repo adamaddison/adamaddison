@@ -8,6 +8,10 @@
 }
 else
 {
-    <h1 class="textLight">Portfolio</h1>
-    <p class="textLight">@Model.Projects[0].Title</p>
+    @foreach(var project in Model.Projects)
+    {
+        <div class="projectContainer projectContainerLight">
+            <p class="textLight">@project.Title</p>
+        </div>
+    }
 }
