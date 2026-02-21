@@ -172,6 +172,10 @@ body
   margin-top: 5px;
   padding: 10px
 }
+#bioText > p:last-child
+{
+  margin: 0
+}
 @media only screen and (min-width: 1000px)
 {
   #bioText
@@ -396,6 +400,12 @@ body
     opacity: 0%;
     z-index: 1;
   }
+  #mobileMenuBuffer
+  {
+    display: block;
+    position: relative;
+    height: 44px
+  }
 }
 @media only screen and (min-width: 1000px)
 {
@@ -404,6 +414,10 @@ body
     display: none
   }
   #menuBarMobilePopoutBackground
+  {
+    display: none
+  }
+  #mobileMenuBuffer
   {
     display: none
   }
