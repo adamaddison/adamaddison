@@ -8,10 +8,42 @@
 }
 else
 {
-    @foreach(var project in Model.Projects)
-    {
-        <div class="projectContainer projectContainerLight">
-            <p class="textLight">@project.Title</p>
+    <div class="container">
+        <div class="row g-0">
+        @foreach(var project in Model.Projects)
+        {
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="projectContainer infoContainerLight">
+                    @if(project.ScreenshotUrls.Any())
+                    {
+                        <img src="@project.ScreenshotUrls[0]" />
+                    }
+                    <h1 class="textLight">@project.Title</h1>
+                    <p class="textLight">@project.Summary</p>
+                    <div class="projectLinkButtons">
+                        @if(!string.IsNullOrEmpty(project.GitHubLink))
+                        {
+                            <a href="@project.GitHubLink" target="_blank">
+                                <div class="aaButtonLight">
+                                GH
+                                </div>
+                            </a>
+                        }
+                        @if(!string.IsNullOrEmpty(project.WebLink))
+                        {
+                            <a href="@project.WebLink" target="_blank">
+                                <div class="aaButtonLight">
+                                WL
+                                </div>
+                            </a>
+                        }
+                    </div>
+                    <div class="aaButtonLight projectFullscreenButton">
+                        FS
+                    </div>
+                </div>
+            </div>
+        }
         </div>
-    }
+    </div>
 }
