@@ -487,11 +487,13 @@ body
 .projectContainer
 {
   margin: 5px;
-  height: min-content
+  height: min-content;
+  text-align: center;
 }
 .projectContainer img
 {
-  width: 100%;
+  max-width: 100%;
+  max-height: 275px;
   border: 1px solid rgb(170, 170, 170);
   margin-bottom: 5px;
 }
@@ -500,9 +502,11 @@ body
   font-size: 15pt;
   font-weight: bold;
   margin-bottom: 0;
+  text-align: left;
 }
 .projectContainer p
 {
   font-size: 12pt;
   margin-bottom: 30px;
+  text-align: left;
 }
