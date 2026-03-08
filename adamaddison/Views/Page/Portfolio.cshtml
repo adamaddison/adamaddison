@@ -8,6 +8,8 @@
 }
 else
 {
+    <div class="greyedOutBackground"></div>
+
     <div class="container">
         <div class="row g-0">
         @foreach(var project in Model.Projects)
@@ -46,4 +48,17 @@ else
         }
         </div>
     </div>
+
+    @foreach(var project in Model.Projects)
+    {
+        <div class="projectWindow projectWindowLight">
+            <div class="projectWindowHeader headerLight">
+                @project.Title
+                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton">X</div>
+            </div>
+            <div class="projectContent projectContentLight">
+                @project.FullDescription
+            </div>
+        </div>
+    }
 }
