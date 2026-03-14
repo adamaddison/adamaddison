@@ -521,8 +521,7 @@ body
   max-width: 1200px;
   border-radius: 10px;
   font-size: 10pt;
-  min-height: 450px;
-  max-height: 70%;
+  height: calc(100% - 40px);
   overflow-y: scroll;
   z-index: 15;
   
@@ -560,12 +559,11 @@ body
 .projectContent
 {
   height: 100%;
-  position: absolute;
-  top: 0px
+  padding: 8px;
 }
 .projectContentLight
 {
-  background-color: f0f0f0;
+  background-color: #f0f0f0;
 }
 .projectContentDark
 {
@@ -573,7 +571,11 @@ body
 }
 .closeProjectButton
 {
-  width: 30px
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 5px;
+  top: 5px;
 }
 
 .greyedOutBackground
@@ -588,4 +590,18 @@ body
   opacity: 0%;
   z-index: 12;
   background-color: #00000080;
+}
+
+.projectContentImages
+{
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow-x: scroll;
+}
+.projectContentImages > img
+{
+  height: 100%;
+  margin-right: 5px;
+  border: 1px solid rgb(170, 170, 170);
 }

@@ -57,7 +57,21 @@ else
                 <div id="closeProjectWindow" class="aaButtonLight closeProjectButton">X</div>
             </div>
             <div class="projectContent projectContentLight">
-                @project.FullDescription
+                <p>@project.FullDescription</p>
+                @if(!string.IsNullOrEmpty(project.WebLink))
+                {
+                    <p>Project website: <a href="@project.WebLink" target="_blank">@project.WebLink</a></p>
+                }
+                @if(!string.IsNullOrEmpty(project.GitHubLink))
+                {
+                    <p>Project GitHub link: <a href="@project.GitHubLink" target="_blank">@project.GitHubLink</a></p>
+                }
+                <div class="projectContentImages">
+                    @foreach(var imageUrl in project.ScreenshotUrls)
+                    {
+                        <img src="@imageUrl" />
+                    }
+                </div>
             </div>
         </div>
     }
