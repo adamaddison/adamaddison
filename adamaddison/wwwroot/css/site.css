@@ -517,7 +517,7 @@ body
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  min-width: 900px;
+  min-width: 950px;
   width: 80%;
   max-width: 1200px;
   border-radius: 10px;

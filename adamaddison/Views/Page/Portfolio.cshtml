@@ -8,10 +8,11 @@
 }
 else
 {
-    <div class="greyedOutBackground opacityFull"></div>
+    <div class="greyedOutBackground" id="projectWindowGreyedOutBackground"></div>
 
     <div class="container">
         <div class="row g-0">
+        @{ int i = 0; }
         @foreach(var project in Model.Projects)
         {
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -40,11 +41,12 @@ else
                             </a>
                         }
                     </div>
-                    <div class="aaButtonLight projectFullscreenButton">
+                    <div class="aaButtonLight projectFullscreenButton" onclick="openProjectFullscreen(@i)">
                         FS
                     </div>
                 </div>
             </div>
+            i += 1;
         }
         </div>
     </div>
@@ -54,7 +56,7 @@ else
         <div class="projectWindow projectWindowLight">
             <div class="projectWindowHeader headerLight">
                 @project.Title
-                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton"><img src="closeLight.svg" /></div>
+                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton" onclick="closeProjectFullscreen()"><img src="closeLight.svg" /></div>
             </div>
             <div class="projectContentWrapper projectContentWrapperLight textLight">
                 <div class="projectContent">
