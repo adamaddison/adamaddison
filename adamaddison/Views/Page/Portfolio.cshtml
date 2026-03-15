@@ -8,7 +8,7 @@
 }
 else
 {
-    <div class="greyedOutBackground"></div>
+    <div class="greyedOutBackground opacityFull"></div>
 
     <div class="container">
         <div class="row g-0">
@@ -54,22 +54,24 @@ else
         <div class="projectWindow projectWindowLight">
             <div class="projectWindowHeader headerLight">
                 @project.Title
-                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton">X</div>
+                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton"><img src="closeLight.svg" /></div>
             </div>
-            <div class="projectContent projectContentLight">
-                <p>@project.FullDescription</p>
-                @if(!string.IsNullOrEmpty(project.WebLink))
-                {
-                    <p>Project website: <a href="@project.WebLink" target="_blank">@project.WebLink</a></p>
-                }
-                @if(!string.IsNullOrEmpty(project.GitHubLink))
-                {
-                    <p>Project GitHub link: <a href="@project.GitHubLink" target="_blank">@project.GitHubLink</a></p>
-                }
-                <div class="projectContentImages">
-                    @foreach(var imageUrl in project.ScreenshotUrls)
+            <div class="projectContentWrapper projectContentWrapperLight textLight">
+                <div class="projectContent">
+                    <div class="projectContentImages">
+                        @foreach(var imageUrl in project.ScreenshotUrls)
+                        {
+                            <img src="@imageUrl" />
+                        }
+                    </div>
+                    <div class="projectFullDescription textLight">@Html.Raw(project.FullDescription)</div>
+                    @if(!string.IsNullOrEmpty(project.WebLink))
                     {
-                        <img src="@imageUrl" />
+                        <p><span>Project website:</span> <a href="@project.WebLink" target="_blank">@project.WebLink</a></p>
+                    }
+                    @if(!string.IsNullOrEmpty(project.GitHubLink))
+                    {
+                        <p><span>Project GitHub link:</span> <a href="@project.GitHubLink" target="_blank">@project.GitHubLink</a></p>
                     }
                 </div>
             </div>

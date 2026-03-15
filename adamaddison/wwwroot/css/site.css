@@ -513,19 +513,23 @@ body
 
 .projectWindow
 {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  width: 70%;
+  min-width: 900px;
+  width: 80%;
   max-width: 1200px;
   border-radius: 10px;
   font-size: 10pt;
   height: calc(100% - 40px);
   overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0%;
   z-index: 15;
-  
   transition: visibility .3s ease-out,opacity .3s ease-out;
+  display: flex;
+  flex-flow: column;
 }
 .projectWindowLight
 {
@@ -558,14 +562,25 @@ body
 }
 .projectContent
 {
+  left: 0;
+  width: 100%;
   height: 100%;
+  display: inline-block;
+  top: 0;
+  position: absolute;
+  overflow: scroll;
   padding: 8px;
 }
-.projectContentLight
+.projectContentWrapper
+{
+  flex: 1 1 auto;
+  position: relative;
+}
+.projectContentWrapperLight
 {
   background-color: #f0f0f0;
 }
-.projectContentDark
+.projectContentWrapperDark
 {
   background-color: #000
 }
@@ -576,6 +591,11 @@ body
   height: 30px;
   right: 5px;
   top: 5px;
+}
+.closeProjectButton > img
+{
+  width: 100%;
+  vertical-align: baseline;
 }
 
 .greyedOutBackground
@@ -592,16 +612,39 @@ body
   background-color: #00000080;
 }
 
+.projectContent p
+{
+  font-size: 12pt;
+  margin-bottom: 6px
+}
+.projectContent p > span
+{
+  font-weight: bold
+}
+.projectFullDescription
+{
+  column-count: 2;
+  text-align: justify;
+  column-gap: 2em;
+  margin-top: 5px;
+  margin-bottom: 5px
+}
+
 .projectContentImages
 {
   position: relative;
-  height: 400px;
+  height: 390px;
   width: 100%;
   overflow-x: scroll;
+  white-space: nowrap;
 }
 .projectContentImages > img
 {
   height: 100%;
-  margin-right: 5px;
+  margin-right: 4px;
   border: 1px solid rgb(170, 170, 170);
+}
+.projectContentImages > img:last-child
+{
+  margin-right: 0px
 }
