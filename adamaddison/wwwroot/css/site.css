@@ -511,25 +511,48 @@ body
   text-align: left;
 }
 
-.projectWindow
+@media only screen and (min-width: 1000px)
 {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  min-width: 950px;
-  width: 80%;
-  max-width: 1200px;
-  border-radius: 10px;
-  font-size: 10pt;
-  height: calc(100% - 40px);
-  overflow-y: scroll;
-  visibility: hidden;
-  opacity: 0%;
-  z-index: 15;
-  transition: visibility .3s ease-out,opacity .3s ease-out;
-  display: flex;
-  flex-flow: column;
+  .projectWindow
+  {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 950px;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 10px;
+    font-size: 10pt;
+    height: calc(100% - 40px);
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0%;
+    z-index: 15;
+    transition: visibility .3s ease-out,opacity .3s ease-out;
+    display: flex;
+    flex-flow: column;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .projectWindow
+  {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    font-size: 10pt;
+    overflow-y: scroll;
+    visibility: hidden;
+    opacity: 0%;
+    z-index: 15;
+    transition: visibility .3s ease-out,opacity .3s ease-out;
+    display: flex;
+    flex-flow: column;
+  }
 }
 .projectWindowLight
 {
@@ -592,10 +615,11 @@ body
   right: 5px;
   top: 5px;
 }
-.closeProjectButton > img
+.closeProjectButton > img, .projectFullscreenButton > img[src$=".svg" i]
 {
   width: 100%;
   vertical-align: baseline;
+  border: 0
 }
 
 .greyedOutBackground
@@ -621,22 +645,49 @@ body
 {
   font-weight: bold
 }
-.projectFullDescription
+@media only screen and (min-width: 650px)
 {
-  column-count: 2;
-  text-align: justify;
-  column-gap: 2em;
-  margin-top: 5px;
-  margin-bottom: 5px
+  .projectFullDescription
+  {
+    column-count: 2;
+    text-align: justify;
+    column-gap: 2em;
+    margin-top: 5px;
+    margin-bottom: 5px
+  }
+}
+@media only screen and (max-width: 649px)
+{
+  .projectFullDescription
+  {
+    column-count: 1;
+    text-align: justify;
+    margin-top: 5px;
+    margin-bottom: 5px
+  }
 }
 
-.projectContentImages
+@media only screen and (min-width: 1000px)
 {
-  position: relative;
-  height: 390px;
-  width: 100%;
-  overflow-x: scroll;
-  white-space: nowrap;
+  .projectContentImages
+  {
+    position: relative;
+    height: 390px;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .projectContentImages
+  {
+    position: relative;
+    height: 318px;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
 }
 .projectContentImages > img
 {
