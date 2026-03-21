@@ -319,33 +319,62 @@ body
   box-shadow: 0 1px #b7b7b7 inset,0 1px #b7b7b7 inset;
 }
 
-.projectLinkButtons
+@media only screen and (min-width: 1000px)
 {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  height: 30px
+  .projectLinkButtons
+  {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 34px
+  }
+  .projectLinkButtons div
+  {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 34px
+  }
+  .projectFullscreenButton
+  {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 34px;
+    height: 34px
+  }
 }
+@media only screen and (max-width: 999px)
+{
+  .projectLinkButtons
+  {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 38px
+  }
+  .projectLinkButtons div
+  {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 38px
+  }
+  .projectFullscreenButton
+  {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 38px;
+    height: 38px
+  }
+}
+
 .projectLinkButtons a
 {
   text-decoration: none;
   width: fit-content;
   display: inline-block;
-}
-.projectLinkButtons div
-{
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 30px
-}
-.projectFullscreenButton
-{
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 30px;
-  height: 30px
 }
 
 #menuBarMobileCurrentPageText
@@ -504,12 +533,25 @@ body
   margin-bottom: 0;
   text-align: left;
 }
-.projectContainer p
+@media only screen and (min-width: 1000px)
 {
-  font-size: 12pt;
-  margin-bottom: 30px;
-  text-align: left;
+  .projectContainer p
+  {
+    font-size: 12pt;
+    margin-bottom: 34px;
+    text-align: left;
+  }
 }
+@media only screen and (max-width: 999px)
+{
+  .projectContainer p
+  {
+    font-size: 12pt;
+    margin-bottom: 38px;
+    text-align: left;
+  }
+}
+
 
 @media only screen and (min-width: 1000px)
 {
@@ -615,7 +657,7 @@ body
   right: 5px;
   top: 5px;
 }
-.closeProjectButton > img, .projectFullscreenButton > img[src$=".svg" i]
+.closeProjectButton > img, .projectFullscreenButton > img[src$=".svg" i], .projectLinkButton > img[src$=".svg" i]
 {
   width: 100%;
   vertical-align: baseline;

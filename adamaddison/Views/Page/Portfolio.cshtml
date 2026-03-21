@@ -27,22 +27,22 @@ else
                         @if(!string.IsNullOrEmpty(project.GitHubLink))
                         {
                             <a href="@project.GitHubLink" target="_blank">
-                                <div class="aaButtonLight">
-                                GH
+                                <div class="aaButtonLight projectLinkButton" title="Project GitHub link">
+                                    <img src="icons/githubLight.svg" alt="Project GitHub link" />
                                 </div>
                             </a>
                         }
                         @if(!string.IsNullOrEmpty(project.WebLink))
                         {
                             <a href="@project.WebLink" target="_blank">
-                                <div class="aaButtonLight">
-                                WL
+                                <div class="aaButtonLight projectLinkButton" title="Project website link">
+                                    <img src="icons/globeLight.svg" alt="Project website link" />
                                 </div>
                             </a>
                         }
                     </div>
-                    <div class="aaButtonLight projectFullscreenButton" onclick="openProjectFullscreen(@i)">
-                        <img src="icons/fullscreenLight.svg" />
+                    <div class="aaButtonLight projectFullscreenButton" onclick="openProjectFullscreen(@i)" title="Project fullscreen button">
+                        <img src="icons/fullscreenLight.svg" alt="Project fullscreen button" />
                     </div>
                 </div>
             </div>
