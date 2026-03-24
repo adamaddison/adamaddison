@@ -36,7 +36,8 @@ body
 }
 .appHeading
 {
-  font-weight: bold
+  font-weight: bold;
+  font-size: 15pt
 }
 
 .textLight

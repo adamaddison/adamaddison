@@ -8,6 +8,18 @@
 }
 else
 {
-    <h1 class="textLight">Work and Education</h1>
-    <p class="textLight">@Model.CompaniesAndSchools[0].Name</p>
+    <div class="listLight">
+        <div class="appHeading appHeadingLight">Work & Education History</div>
+        <div class="listContainer">
+        @foreach(var organisation in @Model.CompaniesAndSchools)
+        {
+            <div class="textLight listItem">@organisation.Name</div>
+        }
+        </div>
+    </div>
+
+    @foreach(var organisation in @Model.CompaniesAndSchools)
+    {
+        <partial name="_SelectedOrganisation" model="@organisation" />
+    }
 }
