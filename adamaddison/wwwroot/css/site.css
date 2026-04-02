@@ -110,7 +110,7 @@ body
 .appListItemSelected
 {
   background-color: #218dff;
-  color: #fff;
+  color: #fff !important;
 }
 
 #selectListContent
@@ -118,6 +118,23 @@ body
   position: absolute;
   width: calc(100% - 325px);
   left: 325px
+}
+
+.organisationContentGrid
+{
+  display: none
+}
+
+.displayIsBlock
+{
+  display: block !important
+}
+
+.fromToDateText
+{
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
 }
 
 .textLight

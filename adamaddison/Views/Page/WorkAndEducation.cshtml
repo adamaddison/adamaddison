@@ -13,9 +13,11 @@ else
             <span>Work & Education History</span>
         </div>
         <div id="appSelectListContainer">
+        @{ int i = 0; }
         @foreach(var organisation in Model.CompaniesAndSchools)
         {
-            <div class="textLight appSelectListItem appSelectListItemLight">@organisation.Name</div>
+            <div class="textLight appSelectListItem appSelectListItemLight" onclick="selectOrganisation(@i)">@organisation.Name</div>
+            i += 1;
         }
         </div>
     </div>

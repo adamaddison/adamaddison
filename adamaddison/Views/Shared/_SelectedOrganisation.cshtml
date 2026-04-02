@@ -1,3 +1,22 @@
-﻿@model CompanyOrSchool
+﻿@using adamaddison.Views.Page
+@model CompanyOrSchool
 
-<div class="infoContainerLight">@Model.CompanySummary</div>
+<div class="container-fluid organisationContentGrid">
+@if(!string.IsNullOrEmpty(@Model.CompanySummary))
+{
+    <div class="row">
+        <div class="col-md-12 fromToDateText">
+            <div class="infoContainerLight">@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate)</div>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-md-6">
+            <div class="infoContainerLight">@Model.CompanySummary</div>
+        </div>
+    </div>
+}
+else
+{
+
+}
+</div>
