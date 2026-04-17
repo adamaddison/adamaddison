@@ -122,7 +122,8 @@ body
 
 .organisationContentGrid
 {
-  display: none
+  display: none;
+  margin-bottom: 5px
 }
 
 .displayIsBlock
@@ -135,6 +136,36 @@ body
   font-size: 16pt;
   font-weight: bold;
   text-align: center;
+}
+
+.organisationGridImgContainer
+{
+  text-align: center;
+}
+.organisationGridImg
+{
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.companySummaryContainer
+{
+  padding: 6px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-align: justify
+}
+
+.schoolImageContainer
+{
+  text-align: center;
+}
+
+.organisationLocationText
+{
+  font-weight: bold;
+  font-size: 13pt;
+  padding-left: 6px
 }
 
 .textLight

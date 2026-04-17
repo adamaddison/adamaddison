@@ -2,21 +2,63 @@
 @model CompanyOrSchool
 
 <div class="container-fluid organisationContentGrid">
-@if(!string.IsNullOrEmpty(@Model.CompanySummary))
+@if(!string.IsNullOrEmpty(@Model.CompanySummary)) // This is the grid for companies
 {
     <div class="row">
         <div class="col-md-12 fromToDateText">
-            <div class="infoContainerLight">@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate)</div>
+            <div class="infoContainerLight">@Model.Name (@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate))</div>
         </div>
     </div>
-    <div class="row mt-1">
+
+    <div class="row mt-1 gx-1">
         <div class="col-md-6">
-            <div class="infoContainerLight">@Model.CompanySummary</div>
+            <div class="infoContainerLight companySummaryContainer">@Model.CompanySummary</div>
+        </div>
+        <div class="col-md-6">
+            <div class="infoContainerLight">
+                <img src="@Model.ImageUrls[0]" class="organisationGridImg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-1 gx-1">
+        <div class="col-md-6 offset-md-6">
+            <div class="infoContainerLight">
+                <div class="organisationLocationText">Work location: @Model.LocationText</div>
+                <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
+            </div>
         </div>
     </div>
 }
-else
+else // This is the grid for schools
 {
+    <div class="row">
+        <div class="col-md-12">
+            <div class="infoContainerLight schoolImageContainer">
+                <img src="@Model.ImageUrls[0]" class="organisationGridImg" />
+            </div>
+        </div>
+    </div>
 
+    <div class="row mt-1 gx-1">
+        <div class="col-md-6">
+            <div class="infoContainerLight">@Html.Raw(Model.SchoolGradeTable)</div>
+        </div>
+        <div class="col-md-6">
+            <div class="infoContainerLight fromToDateText">
+                @Model.Name<br />
+                (@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate))
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-1 gx-1">
+        <div class="col-md-6 offset-md-6">
+            <div class="infoContainerLight">
+                <div class="organisationLocationText">Campus location: @Model.LocationText</div>
+                <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
+            </div>
+        </div>
+    </div>
 }
 </div>
