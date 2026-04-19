@@ -15,18 +15,21 @@
             <div class="infoContainerLight companySummaryContainer">@Model.CompanySummary</div>
         </div>
         <div class="col-md-6">
-            <div class="infoContainerLight">
-                <img src="@Model.ImageUrls[0]" class="organisationGridImg" />
-            </div>
-        </div>
-    </div>
 
-    <div class="row mt-1 gx-1">
-        <div class="col-md-6 offset-md-6">
-            <div class="infoContainerLight">
-                <div class="organisationLocationText">Work location: @Model.LocationText</div>
-                <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
+            <div class="row g-1">
+                <div class="col-md-12">
+                    <div class="infoContainerLight">
+                        <img src="@Model.ImageUrls[0]" class="organisationGridImg" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="infoContainerLight">
+                        <div class="organisationLocationText organisationLocationTextLight">Work location: @Model.LocationText</div>
+                        <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 }
@@ -35,28 +38,31 @@ else // This is the grid for schools
     <div class="row">
         <div class="col-md-12">
             <div class="infoContainerLight schoolImageContainer">
-                <img src="@Model.ImageUrls[0]" class="organisationGridImg" />
+                <img src="@Model.ImageUrls[0]" class="organisationGridSchoolCoverImg" />
             </div>
         </div>
     </div>
 
     <div class="row mt-1 gx-1">
         <div class="col-md-6">
-            <div class="infoContainerLight">@Html.Raw(Model.SchoolGradeTable)</div>
+
+            <div class="row g-1">
+                <div class="col-md-12">
+                    <div class="infoContainerLight fromToDateText">
+                        @Model.Name<br />
+                        (@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate))
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="infoContainerLight"><table class="schoolGradeTable schoolGradeTableLight">@Html.Raw(Model.SchoolGradeTable)</table></div>
+                </div>
+            </div>
+            
         </div>
         <div class="col-md-6">
-            <div class="infoContainerLight fromToDateText">
-                @Model.Name<br />
-                (@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate))
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-1 gx-1">
-        <div class="col-md-6 offset-md-6">
             <div class="infoContainerLight">
-                <div class="organisationLocationText">Campus location: @Model.LocationText</div>
-                <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
+                        <div class="organisationLocationText organisationLocationTextLight">Campus location: @Model.LocationText</div>
+                        <div class="organisationGridImgContainer"> <img src="@Model.LocationImageUrl" class="organisationGridImg" /> </div>
             </div>
         </div>
     </div>
