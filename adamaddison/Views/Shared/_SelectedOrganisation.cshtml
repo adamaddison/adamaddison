@@ -4,13 +4,13 @@
 <div class="container-fluid organisationContentGrid">
 @if(!string.IsNullOrEmpty(@Model.CompanySummary)) // This is the grid for companies
 {
-    <div class="row">
+    <div class="row mb-1">
         <div class="col-md-12 fromToDateText">
             <div class="infoContainerLight">@Model.Name (@PageHelper.FromToDateString(Model.StartedDate, Model.LeftDate))</div>
         </div>
     </div>
 
-    <div class="row mt-1 gx-1">
+    <div class="row g-1">
         <div class="col-md-6">
             <div class="infoContainerLight companySummaryContainer">@Model.CompanySummary</div>
         </div>
@@ -35,7 +35,7 @@
 }
 else // This is the grid for schools
 {
-    <div class="row">
+    <div class="row mb-1">
         <div class="col-md-12">
             <div class="infoContainerLight schoolImageContainer">
                 <img src="@Model.ImageUrls[0]" class="organisationGridSchoolCoverImg" />
@@ -43,7 +43,7 @@ else // This is the grid for schools
         </div>
     </div>
 
-    <div class="row mt-1 gx-1">
+    <div class="row g-1">
         <div class="col-md-6">
 
             <div class="row g-1">

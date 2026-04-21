@@ -8,7 +8,7 @@
 }
 else
 {
-    <div class="appSelectList appSelectListLight">
+    <div id="organisationList" class="appSelectList appSelectListLight">
         <div class="appSelectListHeader appSelectListHeaderLight">
             <span>Work & Education History</span>
         </div>
@@ -23,6 +23,7 @@ else
     </div>
 
     <div id="selectListContent">
+        <div id="showOrgListMobileButton" class="aaButtonLight" onclick="showOrganisationListMobile()">List</div>
     @foreach(var organisation in Model.CompaniesAndSchools)
     {
         <partial name="_SelectedOrganisation" model="@organisation" />

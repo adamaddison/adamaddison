@@ -86,7 +86,10 @@ body
     overflow: hidden;
     left: 0px;
     top: 0px;
-    height: 100vh
+    height: 100vh;
+    transition: 0.3s left linear, 0.3s visibility linear;
+    visibility: visible;
+    z-index: 10;
   }
 }
 
@@ -139,18 +142,53 @@ body
     width: calc(100% - 325px);
     left: 325px
   }
+
+  .hideOrganisationListMobile
+  {
+    display: block;
+  }
+
+  #showOrgListMobileButton
+  {
+    display: none;
+  }
 }
 @media only screen and (max-width: 999px)
 {
   #selectListContent
   {
-    position: absolute;
+    position: relative;
     width: 100%;
     left: 0px;
+    visibility: hidden;
+  }
+
+  .showSelectListContent
+  {
+    visibility: visible !important;
+  }
+
+  .hideOrganisationListMobile
+  {
+    visibility: hidden;
+    left: -100%;
+  }
+
+  #showOrgListMobileButton
+  {
+    display: block;
+    width: fit-content;
+    position: absolute;
+    right: 0px;
+  }
+
+  .organisationContentGrid
+  {
     display: none;
+    margin-bottom: 5px;
+    padding-top: 39px
   }
 }
-
 
 .organisationContentGrid
 {
@@ -249,6 +287,12 @@ body
 .alternatingRowDark
 {
   background-color: #000;
+}
+.gradeTableCaption
+{
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
 }
 
 .textLight

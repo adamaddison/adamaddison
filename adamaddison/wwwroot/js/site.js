@@ -33,4 +33,13 @@ function selectOrganisation(index)
 
     $('.organisationContentGrid').eq(index).addClass('displayIsBlock');
     $('.appSelectListItem').eq(index).addClass('appListItemSelected');
+
+    $('#organisationList').addClass('hideOrganisationListMobile');
+    $('#selectListContent').addClass('showSelectListContent');
+}
+
+function showOrganisationListMobile()
+{
+    $('#organisationList').removeClass('hideOrganisationListMobile');
+    $('#selectListContent').removeClass('showSelectListContent');
 }
