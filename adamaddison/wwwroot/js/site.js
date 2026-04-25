@@ -20,7 +20,7 @@ function closeProjectFullscreen()
     $("#projectWindowGreyedOutBackground").removeClass("opacityFull");
 }
 
-// Making the first organisation info visible / selected on load
+// Making the first organisation info visible / selected on load for desktop
 $(document).ready(function(){
     $('.organisationContentGrid').eq(0).addClass('displayIsBlock');
     $('.appSelectListItem').eq(0).addClass('appListItemSelected');
@@ -30,9 +30,11 @@ function selectOrganisation(index)
 {
     $('.organisationContentGrid').removeClass('displayIsBlock');
     $('.appSelectListItem').removeClass('appListItemSelected');
+    $('.appSelectListItem').removeClass('appListItemSelectedMobile');
 
     $('.organisationContentGrid').eq(index).addClass('displayIsBlock');
     $('.appSelectListItem').eq(index).addClass('appListItemSelected');
+    $('.appSelectListItem').eq(index).addClass('appListItemSelectedMobile');
 
     $('#organisationList').addClass('hideOrganisationListMobile');
     $('#selectListContent').addClass('showSelectListContent');

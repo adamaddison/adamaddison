@@ -86,7 +86,7 @@ body
     overflow: hidden;
     left: 0px;
     top: 0px;
-    height: 100vh;
+    height: calc(100vh - 44px);
     transition: 0.3s left linear, 0.3s visibility linear;
     visibility: visible;
     z-index: 10;
@@ -128,10 +128,22 @@ body
   color: #fff;
   border-bottom: 1px solid rgb(111,111,111);
 }
-.appListItemSelected
+
+@media only screen and (min-width: 1000px)
 {
-  background-color: #218dff;
-  color: #fff !important;
+  .appListItemSelected
+  {
+    background-color: #218dff;
+    color: #fff !important;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .appListItemSelectedMobile
+  {
+    background-color: #218dff;
+    color: #fff !important;
+  }
 }
 
 @media only screen and (min-width: 1000px)
@@ -157,15 +169,23 @@ body
 {
   #selectListContent
   {
-    position: relative;
-    width: 100%;
-    left: 0px;
-    visibility: hidden;
+    position: absolute;
+    width: calc(100% - 10px);
+    left: 5px;
+    opacity: 0;
+    transition: 0.3s opacity linear;
+    height: calc(100vh - 49px);
+    overflow: hidden
   }
 
   .showSelectListContent
   {
-    visibility: visible !important;
+    position: relative !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: auto !important;
+    width: 100% !important;
+    left: 0px !important;
   }
 
   .hideOrganisationListMobile
@@ -336,7 +356,7 @@ body
     bottom: 0px;
     width: 100%;
     height: 44px;
-    z-index: 3;
+    z-index: 12;
   }
 }
 .menuBarContainerLight
@@ -698,7 +718,7 @@ body
     padding: 8px;
     padding-bottom: 0px;
     padding-top: 0px;
-    z-index: 2;
+    z-index: 12;
   }
   #menuBarMobilePopoutBackground
   {
@@ -712,7 +732,7 @@ body
     transition: visibility .3s ease-out,opacity .3s ease-out;
     visibility: hidden;
     opacity: 0%;
-    z-index: 1;
+    z-index: 11;
   }
   #mobileMenuBuffer
   {
