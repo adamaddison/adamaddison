@@ -40,16 +40,35 @@ body
   font-size: 15pt
 }
 
-.appSelectListHeader
+@media only screen and (min-width: 1000px)
 {
-  position: relative;
-  margin: 0;
-  padding: 10px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 13pt;
-  display: block
+  .appSelectListHeader
+  {
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    padding-top: 11px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13pt;
+    display: block
+  }
 }
+@media only screen and (max-width: 999px)
+{
+  .appSelectListHeader
+  {
+    position: relative;
+    margin: 0;
+    padding: 12px;
+    padding-top: 13px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14pt;
+    display: block
+  }
+}
+
 .appSelectListHeaderLight
 {
   background: white;
@@ -104,16 +123,33 @@ body
   border: 1px solid rgb(111,111,111);
 }
 
-.appSelectListItem
+@media only screen and (min-width: 1000px)
 {
-  display: block;
-  padding: 5px;
-  padding-left: 8px;
-  margin: 0;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
+  .appSelectListItem
+  {
+    display: block;
+    padding: 5px;
+    padding-left: 8px;
+    margin: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
 }
+@media only screen and (max-width: 999px)
+{
+  .appSelectListItem
+  {
+    display: block;
+    padding: 8px;
+    padding-left: 10px;
+    margin: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+}
+
 .appSelectListItemLight
 {
   position: relative;
