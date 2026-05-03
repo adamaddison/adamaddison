@@ -69,6 +69,75 @@ body
   }
 }
 
+@media only screen and (min-width: 1000px)
+{
+  .experienceTitle
+  {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16pt;
+    margin-bottom: 4px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .experienceTitle
+  {
+    display: none;
+  }
+}
+
+.experienceCertificationBox h1
+{
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.experienceCertificationBox img
+{
+  width: 100%;
+  border: 1px solid lightgrey
+}
+
+.certificationDateText
+{
+  font-size: 12pt;
+  font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.certificationText
+{
+  font-size: 12pt;
+  display: block;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.experienceListBox
+{
+  height: 100%;
+  text-align: justify;
+  padding-right: 1rem !important;
+}
+
+.experienceListBox ul
+{
+  margin-bottom: 0px;
+  padding-left: 1.5rem;
+}
+
+.experienceListBox span
+{
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
 .appSelectListHeaderLight
 {
   background: white;

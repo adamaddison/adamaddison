@@ -8,9 +8,64 @@
 }
 else
 {
-    <h1 class="textLight">Experience</h1>
+    <span class="textLight experienceTitle">Experience</span>
 
-    <div class="infoContainerLight">
-        <p class="textLight">@Model.SkillsList[0]</p>
+    <div class="container-fluid">
+
+        <div class="row g-1 mb-1">
+            <div class="col-md-6">
+                <div class="infoContainerLight experienceListBox">
+                    <span>Adam's key areas of technical expertise are:</span>
+                    <ul>
+                    @foreach(var skill in Model.SkillsList)
+                    {
+                        <li>@skill</li>
+                    }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="infoContainerLight experienceListBox">
+                    <span>Self directed training:</span>
+                    <ul>
+                    @foreach(var training in Model.TrainingList)
+                    {
+                        <li>@training</li>
+                    }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-1">
+            <div class="col-md-12">
+
+                <div class="infoContainerLight experienceCertificationBox">
+
+                    <div class="row g-1">
+
+                        <div class="col-xxl-8 col-xl-7 col-lg-6 p-2">
+                            <h1>@Model.AZ204Certification.Title</h1>
+                            <span class="certificationDateText">@Model.AZ204Certification.DatePassed.ToString("MMMM yyyy")</span>
+                            @Html.Raw(Model.AZ204Certification.Description)
+                        </div>
+
+                        <div class="col-xxl-4 col-xl-5 col-lg-6 align-self-center">
+                            <div class="row g-1">
+                                <div class="col-md-12">
+                                    <img src="@Model.AZ204Certification.ImageUrls[0]" />
+                                </div>
+                                <div class="col-md-12">
+                                    <img src="@Model.AZ204Certification.ImageUrls[1]" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
     </div>
 }

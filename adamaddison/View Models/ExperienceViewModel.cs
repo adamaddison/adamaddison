@@ -7,5 +7,5 @@ public class ExperienceViewModel
 {
     public string[] SkillsList { get; set; } = [];
     public string[] TrainingList { get; set; } = [];
-    public CertificationInfo AZ204Certification = new();
+    public CertificationInfo AZ204Certification { get; set; } = new();
 }
