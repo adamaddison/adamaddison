@@ -1122,3 +1122,75 @@ body
 {
   margin-right: 0px
 }
+
+#aboutContainer img
+{
+  width: 100%;
+  border: 1px solid rgb(170, 170, 170)
+}
+
+#aboutContainer p
+{
+  text-align: justify;
+}
+
+.radioButtonRow
+{
+  margin: 0px !important
+}
+
+.aaRadioButtonOuter
+{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(#fff, #c0c0c0);
+  border: 1px solid #c0c0c0;
+  box-sizing: content-box;
+}
+
+.aaRadioButtonInner
+{
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background: linear-gradient(#c0c0c0, #fff);
+}
+
+#themeRadioButtonsTitle
+{
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+.aaRadioButtonCircle
+{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 4px;
+  top: 4px;
+  border-radius: 50%;
+  background: #4a4a4a;
+  display: none;
+}
+
+.aaRadioButtonSelected
+{
+  display: block !important
+}
+
+.aaRadioButtonSelectedHideInner
+{
+  display: none !important;
+}
+
+.aaRadioButtonSelectedText
+{
+  font-weight: bold;
+}

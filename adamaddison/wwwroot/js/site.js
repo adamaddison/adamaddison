@@ -1,5 +1,11 @@
 ﻿let showPopoutMenu = false;
 
+const Theme = Object.freeze({
+    auto: 0,
+    light: 1,
+    dark: 2
+});
+
 function togglePopoutMenu()
 {
     showPopoutMenu = !showPopoutMenu;
@@ -44,4 +50,30 @@ function showOrganisationListMobile()
 {
     $('#organisationList').removeClass('hideOrganisationListMobile');
     $('#selectListContent').removeClass('showSelectListContent');
+}
+
+function selectTheme(theme)
+{
+    $('.aaRadioButtonSelectedText').removeClass('aaRadioButtonSelectedText');
+    $('.aaRadioButtonSelected').removeClass('aaRadioButtonSelected');
+    $('.aaRadioButtonSelectedHideInner').removeClass('aaRadioButtonSelectedHideInner');
+
+    if(theme == Theme.auto)
+    {
+        $('#radioButtonAuto .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
+        $('#radioButtonAuto .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
+        $('#radioButtonAuto .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+    }
+    else if(theme == Theme.light)
+    {
+        $('#radioButtonLight .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
+        $('#radioButtonLight .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
+        $('#radioButtonLight .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+    }
+    else if(theme == Theme.dark)
+    {
+        $('#radioButtonDark .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
+        $('#radioButtonDark .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
+        $('#radioButtonDark .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+    }
 }

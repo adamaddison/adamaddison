@@ -8,9 +8,40 @@
 }
 else
 {
-    <h class="textLight appHeading" id="aboutHeader">About</h>
-    <div class="infoContainerLight">
-        <img src="@Model.ImageUrls[0]" class="aboutImage" />
-        <p class="textLight">@Model.Description</p>
-    </div>
+        <div class="container container-fluid">
+            <div class="infoContainerLight row g-md-0" id="aboutContainer">
+
+                <div class="col-md-5">
+                    <img src="@Model.ImageUrls[0]" class="aboutImage" />
+                </div>
+                <div class="col-md-7 px-2">
+                    <h class="textLight appHeading" id="aboutHeader">About this website</h>
+                    <p class="textLight">@Model.Description</p>
+                </div>
+        
+            </div>
+
+            <div class="row justify-content-center mt-1">
+                <div class="infoContainerLight col-md-4 col-xxl-3 pb-0">
+
+                    <div class="themeRadioButtons">
+                        <div id="themeRadioButtonsTitle" class="textLight">Website theme:</div>
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonAuto" onclick="selectTheme(0)">
+                            <span class="twoColumnRowCol1 aaRadioButtonSelectedText">System / Auto</span>
+                            <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner aaRadioButtonSelectedHideInner"></div><div class="aaRadioButtonCircle aaRadioButtonSelected"></div> </div>
+                        </div>
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonLight" onclick="selectTheme(1)">
+                            <span class="twoColumnRowCol1">Light</span>
+                            <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner"></div><div class="aaRadioButtonCircle"></div> </div>
+                        </div>
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonDark" onclick="selectTheme(2)">
+                            <span class="twoColumnRowCol1">Dark</span>
+                            <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner"></div><div class="aaRadioButtonCircle"></div> </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
 }
