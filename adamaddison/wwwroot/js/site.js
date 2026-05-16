@@ -99,6 +99,31 @@ function setTheme(theme)
         var appBackground = $('.appBackgroundDark');
         appBackground.removeClass('appBackgroundDark');
         appBackground.addClass('appBackgroundLight');
+
+        var rowColumns = $('.twoColumnRowDark')
+        rowColumns.removeClass('twoColumnRowDark');
+        rowColumns.addClass('twoColumnRowLight');
+
+        var menuBarContainer = $('.menuBarContainerDark');
+        menuBarContainer.removeClass('menuBarContainerDark');
+        menuBarContainer.addClass('menuBarContainerLight');
+
+        var allButtons = $('.aaButtonDark');
+        allButtons.removeClass('aaButtonDark');
+        allButtons.addClass('aaButtonLight');
+
+        $("img[src='icons/closeDark.svg']").attr('src', 'icons/closeLight.svg');
+        $("img[src='icons/fullscreenDark.svg']").attr('src', 'icons/fullscreenLight.svg');
+        $("img[src='icons/globeDark.svg']").attr('src', 'icons/globeLight.svg');
+        $("img[src='icons/githubDark.svg']").attr('src', 'icons/githubLight.svg');
+
+        var menuItemValues = $('.menuItemValueDark');
+        menuItemValues.removeClass('menuItemValueDark');
+        menuItemValues.addClass('menuItemValueLight');
+
+        var organisationLocationText = $('.organisationLocationTextDark');
+        organisationLocationText.removeClass('organisationLocationTextDark');
+        organisationLocationText.addClass('organisationLocationTextLight');
     }
     else if(theme == Theme.dark)
     {
@@ -113,6 +138,31 @@ function setTheme(theme)
         var appBackground = $('.appBackgroundLight');
         appBackground.removeClass('appBackgroundLight');
         appBackground.addClass('appBackgroundDark');
+
+        var rowColumns = $('.twoColumnRowLight')
+        rowColumns.removeClass('twoColumnRowLight');
+        rowColumns.addClass('twoColumnRowDark');
+
+        var menuBarContainer = $('.menuBarContainerLight');
+        menuBarContainer.removeClass('menuBarContainerLight');
+        menuBarContainer.addClass('menuBarContainerDark');
+
+        var allButtons = $('.aaButtonLight');
+        allButtons.removeClass('aaButtonLight');
+        allButtons.addClass('aaButtonDark');
+
+        $("img[src='icons/closeLight.svg']").attr('src', 'icons/closeDark.svg');
+        $("img[src='icons/fullscreenLight.svg']").attr('src', 'icons/fullscreenDark.svg');
+        $("img[src='icons/globeLight.svg']").attr('src', 'icons/globeDark.svg');
+        $("img[src='icons/githubLight.svg']").attr('src', 'icons/githubDark.svg');
+
+        var menuItemValues = $('.menuItemValueLight');
+        menuItemValues.removeClass('menuItemValueLight');
+        menuItemValues.addClass('menuItemValueDark');
+
+        var organisationLocationText = $('.organisationLocationTextLight');
+        organisationLocationText.removeClass('organisationLocationTextLight');
+        organisationLocationText.addClass('organisationLocationTextDark');
     }
 
     appAutoTheme = false;
