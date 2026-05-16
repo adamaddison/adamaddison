@@ -1,10 +1,12 @@
 ﻿let showPopoutMenu = false;
 
 const Theme = Object.freeze({
-    auto: 0,
-    light: 1,
-    dark: 2
+    light: 0,
+    dark: 1
 });
+
+let appTheme = Theme.light;
+let appAutoTheme = true;
 
 function togglePopoutMenu()
 {
@@ -52,28 +54,120 @@ function showOrganisationListMobile()
     $('#selectListContent').removeClass('showSelectListContent');
 }
 
-function selectTheme(theme)
+
+function toggleThemeRadioButtons()
 {
     $('.aaRadioButtonSelectedText').removeClass('aaRadioButtonSelectedText');
     $('.aaRadioButtonSelected').removeClass('aaRadioButtonSelected');
     $('.aaRadioButtonSelectedHideInner').removeClass('aaRadioButtonSelectedHideInner');
 
-    if(theme == Theme.auto)
+    if(appAutoTheme)
     {
         $('#radioButtonAuto .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
         $('#radioButtonAuto .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
         $('#radioButtonAuto .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
     }
-    else if(theme == Theme.light)
+    else
     {
-        $('#radioButtonLight .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
-        $('#radioButtonLight .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
-        $('#radioButtonLight .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+        if(appTheme == Theme.light)
+        {
+            $('#radioButtonLight .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
+            $('#radioButtonLight .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
+            $('#radioButtonLight .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+        }
+        else if(appTheme == Theme.dark)
+        {
+            $('#radioButtonDark .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
+            $('#radioButtonDark .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
+            $('#radioButtonDark .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+        }
+    }   
+}
+
+function setTheme(theme)
+{
+    if(theme == Theme.light)
+    {
+        var infoContainers = $('.infoContainerDark');
+        infoContainers.removeClass('infoContainerDark');
+        infoContainers.addClass('infoContainerLight');
+
+        var allText = $('.textDark');
+        allText.removeClass('textDark');
+        allText.addClass('textLight');
+
+        var appBackground = $('.appBackgroundDark');
+        appBackground.removeClass('appBackgroundDark');
+        appBackground.addClass('appBackgroundLight');
     }
     else if(theme == Theme.dark)
     {
-        $('#radioButtonDark .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
-        $('#radioButtonDark .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
-        $('#radioButtonDark .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+        var infoContainers = $('.infoContainerLight');
+        infoContainers.removeClass('infoContainerLight');
+        infoContainers.addClass('infoContainerDark');
+
+        var allText = $('.textLight');
+        allText.removeClass('textLight');
+        allText.addClass('textDark');
+
+        var appBackground = $('.appBackgroundLight');
+        appBackground.removeClass('appBackgroundLight');
+        appBackground.addClass('appBackgroundDark');
+    }
+
+    appAutoTheme = false;
+    localStorage["aa.autoTheme"] = false;
+    appTheme = theme;
+    localStorage["aa.theme"] = theme;
+}
+
+var setAutoTheme = function()
+{
+    var systemInLightMode = window.matchMedia('(prefers-color-scheme: light)');
+
+    if(systemInLightMode.matches)
+    {
+        setTheme(Theme.light);
+    }
+    else
+    {
+        setTheme(Theme.dark);
+    }
+
+    appAutoTheme = true;
+    localStorage["aa.autoTheme"] = true;
+}
+
+// Initialising website theme to either light or dark
+var initialiseTheme = function()
+{
+    if(localStorage["aa.theme"] !== undefined)
+    {
+        appTheme = parseInt(localStorage["aa.theme"]);
+    }
+    if(localStorage["aa.autoTheme"] !== undefined)
+    {
+        appAutoTheme = localStorage["aa.autoTheme"] === "true";
+    }
+
+    if(appAutoTheme)
+    {
+        setAutoTheme();
+        toggleThemeRadioButtons();
+    }
+    else
+    {
+        setTheme(appTheme);
+        toggleThemeRadioButtons();
     }
 }
+$(document).ready(function(){
+    initialiseTheme();
+});
+
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
+            if(appAutoTheme)
+            {
+                setAutoTheme();
+            }
+        });

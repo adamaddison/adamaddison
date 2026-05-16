@@ -26,15 +26,15 @@ else
 
                     <div class="themeRadioButtons">
                         <div id="themeRadioButtonsTitle" class="textLight">Website theme:</div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonAuto" onclick="selectTheme(0)">
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonAuto" onclick="setAutoTheme();toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1 aaRadioButtonSelectedText">System / Auto</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner aaRadioButtonSelectedHideInner"></div><div class="aaRadioButtonCircle aaRadioButtonSelected"></div> </div>
                         </div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonLight" onclick="selectTheme(1)">
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonLight" onclick="setTheme(0);toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1">Light</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner"></div><div class="aaRadioButtonCircle"></div> </div>
                         </div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonDark" onclick="selectTheme(2)">
+                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonDark" onclick="setTheme(1);toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1">Dark</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuter"> <div class="aaRadioButtonInner"></div><div class="aaRadioButtonCircle"></div> </div>
                         </div>
