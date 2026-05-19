@@ -124,6 +124,62 @@ function setTheme(theme)
         var organisationLocationText = $('.organisationLocationTextDark');
         organisationLocationText.removeClass('organisationLocationTextDark');
         organisationLocationText.addClass('organisationLocationTextLight');
+
+        var allHeaders = $('.headerDark');
+        allHeaders.removeClass('headerDark');
+        allHeaders.addClass('headerLight');
+
+        var projectContentWrappers = $('.projectContentWrapperDark');
+        projectContentWrappers.removeClass('projectContentWrapperDark');
+        projectContentWrappers.addClass('projectContentWrapperLight');
+
+        var workEducationHeader = $('.appSelectListHeaderDark');
+        workEducationHeader.removeClass('appSelectListHeaderDark');
+        workEducationHeader.addClass('appSelectListHeaderLight');
+
+        var workEducationItem = $('.appSelectListItemDark');
+        workEducationItem.removeClass('appSelectListItemDark');
+        workEducationItem.addClass('appSelectListItemLight');
+
+        var workEducationList = $('.appSelectListDark');
+        workEducationList.removeClass('appSelectListDark');
+        workEducationList.addClass('appSelectListLight');
+
+        var allTables = $('.schoolGradeTableDark');
+        allTables.removeClass('schoolGradeTableDark');
+        allTables.addClass('schoolGradeTableLight');
+
+        var alternatingRows = $('.alternatingRowDark');
+        alternatingRows.removeClass('alternatingRowDark');
+        alternatingRows.addClass('alternatingRowLight');
+
+        var projectWindows = $('.projectWindowDark');
+        projectWindows.removeClass('projectWindowDark');
+        projectWindows.addClass('projectWindowLight');
+
+        var radioButtonOuter = $('.aaRadioButtonOuterDark');
+        radioButtonOuter.removeClass('aaRadioButtonOuterDark');
+        radioButtonOuter.addClass('aaRadioButtonOuterLight');
+
+        var radioButtonInner = $('.aaRadioButtonInnerDark');
+        radioButtonInner.removeClass('aaRadioButtonInnerDark');
+        radioButtonInner.addClass('aaRadioButtonInnerLight');
+
+        var radioButtonCircle = $('.aaRadioButtonCircleDark');
+        radioButtonCircle.removeClass('aaRadioButtonCircleDark');
+        radioButtonCircle.addClass('aaRadioButtonCircleLight');
+
+        var menuLines = $('.menuIconLineDark');
+        menuLines.removeClass('menuIconLineDark');
+        menuLines.addClass('menuIconLineLight');
+
+        var mobileMenu = $('.menuBarContainerMobileDark');
+        mobileMenu.removeClass('menuBarContainerMobileDark');
+        mobileMenu.addClass('menuBarContainerMobileLight');
+
+        var mobileMenuItem = $('.menuItemMobileDark');
+        mobileMenuItem.removeClass('menuItemMobileDark');
+        mobileMenuItem.addClass('menuItemMobileLight');
     }
     else if(theme == Theme.dark)
     {
@@ -163,6 +219,62 @@ function setTheme(theme)
         var organisationLocationText = $('.organisationLocationTextLight');
         organisationLocationText.removeClass('organisationLocationTextLight');
         organisationLocationText.addClass('organisationLocationTextDark');
+
+        var allHeaders = $('.headerLight');
+        allHeaders.removeClass('headerLight');
+        allHeaders.addClass('headerDark');
+
+        var projectContentWrappers = $('.projectContentWrapperLight');
+        projectContentWrappers.removeClass('projectContentWrapperLight');
+        projectContentWrappers.addClass('projectContentWrapperDark');
+
+        var workEducationHeader = $('.appSelectListHeaderLight');
+        workEducationHeader.removeClass('appSelectListHeaderLight');
+        workEducationHeader.addClass('appSelectListHeaderDark');
+
+        var workEducationItem = $('.appSelectListItemLight');
+        workEducationItem.removeClass('appSelectListItemLight');
+        workEducationItem.addClass('appSelectListItemDark');
+
+        var workEducationList = $('.appSelectListLight');
+        workEducationList.removeClass('appSelectListLight');
+        workEducationList.addClass('appSelectListDark');
+
+        var allTables = $('.schoolGradeTableLight');
+        allTables.removeClass('schoolGradeTableLight');
+        allTables.addClass('schoolGradeTableDark');
+
+        var alternatingRows = $('.alternatingRowLight');
+        alternatingRows.removeClass('alternatingRowLight');
+        alternatingRows.addClass('alternatingRowDark');
+
+        var projectWindows = $('.projectWindowLight');
+        projectWindows.removeClass('projectWindowLight');
+        projectWindows.addClass('projectWindowDark');
+
+        var radioButtonOuter = $('.aaRadioButtonOuterLight');
+        radioButtonOuter.removeClass('aaRadioButtonOuterLight');
+        radioButtonOuter.addClass('aaRadioButtonOuterDark');
+
+        var radioButtonInner = $('.aaRadioButtonInnerLight');
+        radioButtonInner.removeClass('aaRadioButtonInnerLight');
+        radioButtonInner.addClass('aaRadioButtonInnerDark');
+
+        var radioButtonCircle = $('.aaRadioButtonCircleLight');
+        radioButtonCircle.removeClass('aaRadioButtonCircleLight');
+        radioButtonCircle.addClass('aaRadioButtonCircleDark');
+
+        var menuLines = $('.menuIconLineLight');
+        menuLines.removeClass('menuIconLineLight');
+        menuLines.addClass('menuIconLineDark');
+
+        var mobileMenu = $('.menuBarContainerMobileLight');
+        mobileMenu.removeClass('menuBarContainerMobileLight');
+        mobileMenu.addClass('menuBarContainerMobileDark');
+
+        var mobileMenuItem = $('.menuItemMobileLight');
+        mobileMenuItem.removeClass('menuItemMobileLight');
+        mobileMenuItem.addClass('menuItemMobileDark');
     }
 
     appAutoTheme = false;
