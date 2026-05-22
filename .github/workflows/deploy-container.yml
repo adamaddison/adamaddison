@@ -32,7 +32,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy to Container Apps
-      uses: azure/container-apps-deploy@v1
+      uses: azure/container-apps-deploy-action@v1
       with:
         imageToDeploy: ${{ env.IMAGE }}
         containerAppName: adamaddison-container
