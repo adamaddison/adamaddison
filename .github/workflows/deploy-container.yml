@@ -1,0 +1,39 @@
+name: Build and Deploy Container App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Login to ACR
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+        username: ${{ secrets.ACR_USERNAME }}
+        password: ${{ secrets.ACR_PASSWORD }}
+
+    - name: Build and push image
+      run: |
+        IMAGE=${{ secrets.ACR_LOGIN_SERVER }}/adamaddison:${{ github.sha }}
+        docker build -t $IMAGE .
+        docker push $IMAGE
+        echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy to Container Apps
+      uses: azure/container-apps-deploy@v1
+      with:
+        imageToDeploy: ${{ env.IMAGE }}
+        containerAppName: adamaddison-container
+        resourceGroup: adamaddison-container-rg
