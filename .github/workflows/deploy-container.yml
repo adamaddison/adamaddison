@@ -35,5 +35,5 @@ jobs:
       uses: azure/container-apps-deploy-action@v1
       with:
         imageToDeploy: ${{ env.IMAGE }}
-        containerAppName: adamaddison-container
+        containerAppName: adamaddison-container-app
         resourceGroup: adamaddison-container-rg
