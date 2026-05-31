@@ -1,4 +1,5 @@
 using adamaddison.Interfaces;
+using adamaddison.Middleware;
 using adamaddison.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<AccessControlMiddleware>();
 app.UseRouting();
 
 app.UseAuthorization();
