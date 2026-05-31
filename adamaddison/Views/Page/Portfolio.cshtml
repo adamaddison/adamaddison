@@ -66,7 +66,7 @@ else
                             <img src="@imageUrl" />
                         }
                     </div>
-                    <div class="projectFullDescription textLight">@Html.Raw(project.FullDescription)</div>
+                    <div class="projectFullDescription textLight infoContainerLight">@Html.Raw(project.FullDescription)</div>
                     @if(!string.IsNullOrEmpty(project.WebLink))
                     {
                         <p><span>Project website:</span> <a href="@project.WebLink" target="_blank">@project.WebLink</a></p>

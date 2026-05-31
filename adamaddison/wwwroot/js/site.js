@@ -112,10 +112,15 @@ function setTheme(theme)
         allButtons.removeClass('aaButtonDark');
         allButtons.addClass('aaButtonLight');
 
+        var buttonBorders = $('.aaButtonBorderDark');
+        buttonBorders.removeClass('aaButtonBorderDark');
+        buttonBorders.addClass('aaButtonBorderLight');
+
         $("img[src='icons/closeDark.svg']").attr('src', 'icons/closeLight.svg');
         $("img[src='icons/fullscreenDark.svg']").attr('src', 'icons/fullscreenLight.svg');
         $("img[src='icons/globeDark.svg']").attr('src', 'icons/globeLight.svg');
         $("img[src='icons/githubDark.svg']").attr('src', 'icons/githubLight.svg');
+        $("img[src='icons/backDark.svg']").attr('src', 'icons/backLight.svg');
 
         var menuItemValues = $('.menuItemValueDark');
         menuItemValues.removeClass('menuItemValueDark');
@@ -207,10 +212,15 @@ function setTheme(theme)
         allButtons.removeClass('aaButtonLight');
         allButtons.addClass('aaButtonDark');
 
+        var buttonBorders = $('.aaButtonBorderLight');
+        buttonBorders.removeClass('aaButtonBorderLight');
+        buttonBorders.addClass('aaButtonBorderDark');
+
         $("img[src='icons/closeLight.svg']").attr('src', 'icons/closeDark.svg');
         $("img[src='icons/fullscreenLight.svg']").attr('src', 'icons/fullscreenDark.svg');
         $("img[src='icons/globeLight.svg']").attr('src', 'icons/globeDark.svg');
         $("img[src='icons/githubLight.svg']").attr('src', 'icons/githubDark.svg');
+        $("img[src='icons/backLight.svg']").attr('src', 'icons/backDark.svg');
 
         var menuItemValues = $('.menuItemValueLight');
         menuItemValues.removeClass('menuItemValueLight');

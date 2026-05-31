@@ -305,13 +305,30 @@ body
     width: fit-content;
     position: absolute;
     left: 0px;
+    height: 38px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  #showOrgListMobileButton > img
+  {
+    height: 85%;
+    border: 0;
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+  }
+
+  #showOrgListMobileButton > span
+  {
+    vertical-align: text-top;
   }
 
   .organisationContentGrid
   {
     display: none;
     margin-bottom: 5px;
-    padding-top: 39px
+    padding-top: 43px
   }
 }
 
@@ -704,6 +721,12 @@ body
   box-shadow: 0 1px #b7b7b7 inset,0 1px #b7b7b7 inset;
 }
 
+.aaButtonBorderDark
+{
+  border: 1px solid #959595 !important;
+  box-shadow: 0 0 #000 !important
+}
+
 @media only screen and (min-width: 1000px)
 {
   .projectLinkButtons
@@ -727,6 +750,13 @@ body
     right: 5px;
     width: 34px;
     height: 34px
+  }
+  .projectLinkButtons a
+  {
+    text-decoration: none;
+    width: fit-content;
+    display: inline-block;
+    margin-right: 1px;
   }
 }
 @media only screen and (max-width: 999px)
@@ -753,13 +783,13 @@ body
     width: 38px;
     height: 38px
   }
-}
-
-.projectLinkButtons a
-{
-  text-decoration: none;
-  width: fit-content;
-  display: inline-block;
+  .projectLinkButtons a
+  {
+    text-decoration: none;
+    width: fit-content;
+    display: inline-block;
+    margin-right: 5px;
+  }
 }
 
 #menuBarMobileCurrentPageText
@@ -775,7 +805,7 @@ body
 #menuBarMobileShowPopoutButton
 {
   width: 44px;
-  height: 26px;
+  height: 32px;
   right: 9px;
   top: 50%;
   transform: translateY(-50%);
@@ -789,8 +819,8 @@ body
   width: 30px;
   left: 50%;
   transform: translate(-50%);
-  top: 1px;
-  margin-top: 3px;
+  top: 3px;
+  margin-top: 4px;
 }
 .menuIconLineLight
 {
@@ -989,14 +1019,30 @@ body
 {
   box-shadow: 0 0 17px 6px #fffc;
 }
-.projectWindowHeader
+@media only screen and (min-width: 1000px)
 {
-  text-align: center;
-  padding: 7px;
-  font-size: 13pt;
-  font-weight: 700;
-  position: sticky;
-  top: 0;
+  .projectWindowHeader
+  {
+    text-align: center;
+    padding: 8px;
+    padding-bottom: 9px;
+    font-size: 13pt;
+    font-weight: 700;
+    position: sticky;
+    top: 0;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .projectWindowHeader
+  {
+    text-align: center;
+    padding: 12px;
+    font-size: 12pt;
+    font-weight: 700;
+    position: sticky;
+    top: 0;
+  }
 }
 .headerLight
 {
@@ -1034,13 +1080,27 @@ body
 {
   background-color: #000
 }
-.closeProjectButton
+@media only screen and (min-width: 1000px)
 {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  right: 5px;
-  top: 5px;
+  .closeProjectButton
+  {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right: 6px;
+    top: 6px;
+  }
+}
+@media only screen and (max-width: 999px)
+{
+  .closeProjectButton
+  {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    right: 5px;
+    top: 5px;
+  }
 }
 .closeProjectButton > img, .projectFullscreenButton > img[src$=".svg" i], .projectLinkButton > img[src$=".svg" i]
 {
@@ -1080,7 +1140,8 @@ body
     text-align: justify;
     column-gap: 2em;
     margin-top: 5px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    padding: 7px
   }
 }
 @media only screen and (max-width: 649px)
@@ -1090,7 +1151,8 @@ body
     column-count: 1;
     text-align: justify;
     margin-top: 5px;
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    padding: 7px
   }
 }
 
