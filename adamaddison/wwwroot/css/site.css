@@ -1220,7 +1220,7 @@ body
   height: 16px;
   border-radius: 50%;
   background: linear-gradient(#838383, #000);
-  border: 1px solid #838383;
+  border: 1px solid #000;
   box-sizing: content-box;
 }
 

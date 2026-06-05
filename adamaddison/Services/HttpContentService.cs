@@ -22,12 +22,12 @@ public class HttpContentService<T> : IHttpContentService<T>
         {
             var content = await _http.GetStringAsync(Url);
 
-            viewModel = JsonSerializer.Deserialize<T>(content) ?? throw new InvalidOperationException();
+            viewModel = JsonSerializer.Deserialize<T>(content) ?? throw new InvalidOperationException("Failed to deserialise remote content.");
         }
-        catch (InvalidOperationException)
+        catch (Exception ex)
         {
-            _logger.Log(LogLevel.Error, "Failed to retrieve remote content.");
-            throw;
+            _logger.LogError(ex, "Failed to retrieve remote content.");
+            throw new InvalidOperationException("Failed to retrieve remote content.");
         }
         
         return viewModel;
