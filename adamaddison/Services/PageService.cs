@@ -6,6 +6,7 @@ namespace adamaddison.Services;
 
 public class PageService : IPageService
 {
+    private readonly ILogger<PageService> _logger;
     private readonly IHttpContentService<HomeViewModel> _getHomeViewModel;
     private readonly IHttpContentService<PortfolioViewModel> _getPortfolioViewModel;
     private readonly IHttpContentService<WorkAndEducationViewModel> _getWorkAndEducationViewModel;
@@ -17,13 +18,15 @@ public class PageService : IPageService
     private readonly string ExperienceContentUrl;
     private readonly string AboutContentUrl;
 
-    public PageService(IHttpContentService<HomeViewModel> getHomeViewModel,
+    public PageService(ILogger<PageService> logger,
+                       IHttpContentService<HomeViewModel> getHomeViewModel,
                        IHttpContentService<PortfolioViewModel> getPortfolioViewModel,
                        IHttpContentService<WorkAndEducationViewModel> getWorkAndEducationViewModel,
                        IHttpContentService<ExperienceViewModel> getExperienceViewModel,
                        IHttpContentService<AboutViewModel> getAboutViewModel,
                        IConfiguration config)
     {
+        _logger = logger;
         _getHomeViewModel = getHomeViewModel;
         _getPortfolioViewModel = getPortfolioViewModel;
         _getWorkAndEducationViewModel = getWorkAndEducationViewModel;
@@ -39,36 +42,76 @@ public class PageService : IPageService
 
     public async Task<AboutViewModel> GetAboutContentAsync()
     {
-        AboutViewModel vm = await _getAboutViewModel.GetContentFromUrlAsync(AboutContentUrl);
+        try
+        {
+            AboutViewModel vm = await _getAboutViewModel.GetContentFromUrlAsync(AboutContentUrl);
 
-        return vm;
+            return vm;
+        }
+        catch(Exception ex)
+        {
+            _logger.LogError(ex, "Exception thrown - PageService.GetAboutContentAsync");
+            throw;
+        }
     }
 
     public async Task<ExperienceViewModel> GetExperienceContentAsync()
     {
-        ExperienceViewModel vm = await _getExperienceViewModel.GetContentFromUrlAsync(ExperienceContentUrl);
+        try
+        {
+            ExperienceViewModel vm = await _getExperienceViewModel.GetContentFromUrlAsync(ExperienceContentUrl);
 
-        return vm;
+            return vm;
+        }
+        catch(Exception ex)
+        {
+            _logger.LogError(ex, "Exception thrown - PageService.GetExperienceContentAsync");
+            throw;
+        }
     }
 
     public async Task<HomeViewModel> GetHomeContentAsync()
     {
-        HomeViewModel vm = await _getHomeViewModel.GetContentFromUrlAsync(HomeContentUrl);
+        try
+        {
+            HomeViewModel vm = await _getHomeViewModel.GetContentFromUrlAsync(HomeContentUrl);
 
-        return vm;
+            return vm;
+        }
+        catch(Exception ex)
+        {
+            _logger.LogError(ex, "Exception thrown - PageService.GetHomeContentAsync");
+            throw;
+        }
     }
 
     public async Task<PortfolioViewModel> GetPortfolioContentAsync()
     {
-        PortfolioViewModel vm = await _getPortfolioViewModel.GetContentFromUrlAsync(PortfolioContentUrl);
+        try
+        {
+            PortfolioViewModel vm = await _getPortfolioViewModel.GetContentFromUrlAsync(PortfolioContentUrl);
 
-        return vm;
+            return vm;
+        }
+        catch(Exception ex)
+        {
+            _logger.LogError(ex, "Exception thrown - PageService.GetPortfolioContentAsync");
+            throw;
+        }
     }
 
     public async Task<WorkAndEducationViewModel> GetWorkAndEducationContentAsync()
     {
-        WorkAndEducationViewModel vm = await _getWorkAndEducationViewModel.GetContentFromUrlAsync(WorkAndEducationContentUrl);
+        try
+        {
+            WorkAndEducationViewModel vm = await _getWorkAndEducationViewModel.GetContentFromUrlAsync(WorkAndEducationContentUrl);
 
-        return vm;
+            return vm;
+        }
+        catch(Exception ex)
+        {
+            _logger.LogError(ex, "Exception thrown - PageService.GetWorkAndEducationContentAsync");
+            throw;
+        }
     }
 }
