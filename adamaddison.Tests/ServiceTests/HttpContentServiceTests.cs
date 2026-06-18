@@ -27,7 +27,7 @@ public class HttpContentServiceTests
                         .ReturnsAsync(new HttpResponseMessage()
                         {
                             StatusCode = HttpStatusCode.OK,
-                            Content = new StringContent("{\"Description\":\"This is a test\",\"ImageUrls\":[\"element1\",\"element2\"]}")
+                            Content = new StringContent("{\"Description\":[\"This is a test\"],\"ImageUrls\":[\"element1\",\"element2\"]}")
                         });
 
         var httpClient = new HttpClient(httpHandlerMock.Object);
@@ -39,7 +39,7 @@ public class HttpContentServiceTests
         // Assert
         Assert.IsNotNull(vm);
         Assert.IsInstanceOfType<AboutViewModel>(vm);
-        Assert.AreEqual("This is a test", vm.Description);
+        Assert.AreEqual("This is a test", vm.Description[0]);
         Assert.AreEqual("element1", vm.ImageUrls[0]);
         Assert.AreEqual("element2", vm.ImageUrls[1]);
     }

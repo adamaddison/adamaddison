@@ -173,7 +173,7 @@ public class PageControllerTests
     public async Task About_ReturnsView_OnSuccess()
     {
         // Arrange
-        var expectedResponse = new AboutViewModel(){ Description = "example" };
+        var expectedResponse = new AboutViewModel(){ Description = ["example"] };
         var pageServiceMock = new Mock<IPageService>();
         pageServiceMock.Setup(x => x.GetAboutContentAsync())
                        .ReturnsAsync(expectedResponse);

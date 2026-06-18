@@ -48,7 +48,7 @@ public class PageServiceTests
     public async Task GetAboutContentAsync_ReturnsModel_OnSuccess()
     {
         // Arrange
-        var expectedResponse = new AboutViewModel(){ Description = "This is a test", ImageUrls = ["element1", "element2"]};
+        var expectedResponse = new AboutViewModel(){ Description = ["This is a test"], ImageUrls = ["element1", "element2"]};
         Assert.IsNotNull(getAboutViewModelMock, "getAboutViewModelMock should not be null");
         getAboutViewModelMock.Setup(x => x.GetContentFromUrlAsync(It.IsAny<string>()))
                              .ReturnsAsync(expectedResponse);

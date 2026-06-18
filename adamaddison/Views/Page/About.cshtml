@@ -16,7 +16,10 @@ else
                 </div>
                 <div class="col-md-7 px-2">
                     <h class="textLight appHeading" id="aboutHeader">About this website</h>
-                    <p class="textLight">@Model.Description</p>
+                    @foreach(var descriptionParagraph in Model.Description)
+                    {
+                        <p class="textLight">@descriptionParagraph</p>
+                    }
                 </div>
         
             </div>
