@@ -1132,6 +1132,10 @@ body
 {
   font-weight: bold
 }
+.projectContent ul
+{
+  font-size: 12pt;
+}
 @media only screen and (min-width: 650px)
 {
   .projectFullDescription
