@@ -185,6 +185,10 @@ function setTheme(theme)
         var mobileMenuItem = $('.menuItemMobileDark');
         mobileMenuItem.removeClass('menuItemMobileDark');
         mobileMenuItem.addClass('menuItemMobileLight');
+
+        var tableFooter = $('.gradeTableFooterDark');
+        tableFooter.removeClass('gradeTableFooterDark');
+        tableFooter.addClass('gradeTableFooterLight');
     }
     else if(theme == Theme.dark)
     {
@@ -285,6 +289,10 @@ function setTheme(theme)
         var mobileMenuItem = $('.menuItemMobileLight');
         mobileMenuItem.removeClass('menuItemMobileLight');
         mobileMenuItem.addClass('menuItemMobileDark');
+
+        var tableFooter = $('.gradeTableFooterLight');
+        tableFooter.removeClass('gradeTableFooterLight');
+        tableFooter.addClass('gradeTableFooterDark');
     }
 
     appAutoTheme = false;

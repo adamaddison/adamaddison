@@ -436,6 +436,18 @@ body
   text-align: center;
   font-weight: bold;
 }
+.gradeTableFooterLight
+{
+  font-weight: normal;
+  font-size: 11pt;
+  border-top: 1px solid lightgray
+}
+.gradeTableFooterDark
+{
+  font-weight: normal;
+  font-size: 11pt;
+  border-top: 1px solid rgb(111,111,111)
+}
 
 .textLight
 {
