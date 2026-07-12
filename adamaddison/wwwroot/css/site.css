@@ -44,29 +44,37 @@ body
 {
   .appSelectListHeader
   {
-    position: relative;
+    position: sticky;
     margin: 0;
     padding: 10px;
     padding-top: 11px;
     text-align: center;
     font-weight: 700;
     font-size: 13pt;
-    display: block
+    display: block;
+    top: 0
   }
 }
 @media only screen and (max-width: 999px)
 {
   .appSelectListHeader
   {
-    position: relative;
+    position: sticky;
     margin: 0;
     padding: 12px;
     padding-top: 13px;
     text-align: center;
     font-weight: 700;
     font-size: 14pt;
-    display: block
+    display: block;
+    top: 0
   }
+}
+
+#appSelectListContainer
+{
+  flex: 1;
+  overflow-y: scroll;
 }
 
 @media only screen and (min-width: 1000px)
@@ -160,7 +168,9 @@ body
     border-radius: 4px;
     overflow: hidden;
     left: 0px;
-    height: calc(100vh - 60px)
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column
   }
 }
 @media only screen and (max-width: 999px)
@@ -178,6 +188,8 @@ body
     transition: 0.3s left linear, 0.3s visibility linear;
     visibility: visible;
     z-index: 10;
+    display: flex;
+    flex-direction: column
   }
 }
 
@@ -262,7 +274,7 @@ body
 
   .hideOrganisationListMobile
   {
-    display: block;
+    display: flex;
   }
 
   #showOrgListMobileButton
