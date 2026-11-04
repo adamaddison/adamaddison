@@ -660,7 +660,7 @@ body
   top: 50%;
   transform: translateY(-50%);
 }
-.twoColumnRowDark a
+[data-theme-aa="1"] .two-column-row a
 {
   color: #6d9fff
 }
