@@ -24,7 +24,7 @@ else
     </div>
 
     <div id="selectListContent">
-        <div id="showOrgListMobileButton" class="aaButtonLight aaButtonBorderLight" onclick="showOrganisationListMobile()"><img src="icons/backLight.svg" /> <span>Work & Education History</span></div>
+        <div id="showOrgListMobileButton" class="aa-button aa-button-high-contrast" onclick="showOrganisationListMobile()"><img src="icons/backLight.svg" /> <span>Work & Education History</span></div>
     @foreach(var organisation in Model.CompaniesAndSchools)
     {
         <partial name="_SelectedOrganisation" model="@organisation" />

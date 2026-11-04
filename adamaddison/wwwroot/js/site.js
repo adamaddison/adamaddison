@@ -88,18 +88,6 @@ function setTheme(theme)
 {
     if(theme == Theme.light)
     {
-        var menuBarContainer = $('.menuBarContainerDark');
-        menuBarContainer.removeClass('menuBarContainerDark');
-        menuBarContainer.addClass('menuBarContainerLight');
-
-        var allButtons = $('.aaButtonDark');
-        allButtons.removeClass('aaButtonDark');
-        allButtons.addClass('aaButtonLight');
-
-        var buttonBorders = $('.aaButtonBorderDark');
-        buttonBorders.removeClass('aaButtonBorderDark');
-        buttonBorders.addClass('aaButtonBorderLight');
-
         document.querySelectorAll("img[src='icons/closeDark.svg']").forEach(element => {
             element.setAttribute("src", "icons/closeLight.svg");
         });
@@ -186,18 +174,6 @@ function setTheme(theme)
     }
     else if(theme == Theme.dark)
     {
-        var menuBarContainer = $('.menuBarContainerLight');
-        menuBarContainer.removeClass('menuBarContainerLight');
-        menuBarContainer.addClass('menuBarContainerDark');
-
-        var allButtons = $('.aaButtonLight');
-        allButtons.removeClass('aaButtonLight');
-        allButtons.addClass('aaButtonDark');
-
-        var buttonBorders = $('.aaButtonBorderLight');
-        buttonBorders.removeClass('aaButtonBorderLight');
-        buttonBorders.addClass('aaButtonBorderDark');
-
         document.querySelectorAll("img[src='icons/closeLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/closeDark.svg");
         });

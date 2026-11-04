@@ -27,7 +27,7 @@ else
                         @if(!string.IsNullOrEmpty(project.GitHubLink))
                         {
                             <a href="@project.GitHubLink" target="_blank">
-                                <div class="aaButtonLight projectLinkButton" title="Project GitHub link">
+                                <div class="aa-button projectLinkButton" title="Project GitHub link">
                                     <img src="icons/githubLight.svg" alt="Project GitHub link" />
                                 </div>
                             </a>
@@ -35,13 +35,13 @@ else
                         @if(!string.IsNullOrEmpty(project.WebLink))
                         {
                             <a href="@project.WebLink" target="_blank">
-                                <div class="aaButtonLight projectLinkButton" title="Project website link">
+                                <div class="aa-button projectLinkButton" title="Project website link">
                                     <img src="icons/globeLight.svg" alt="Project website link" />
                                 </div>
                             </a>
                         }
                     </div>
-                    <div class="aaButtonLight projectFullscreenButton" onclick="openProjectFullscreen(@i)" title="Project fullscreen button">
+                    <div class="aa-button projectFullscreenButton" onclick="openProjectFullscreen(@i)" title="Project fullscreen button">
                         <img src="icons/fullscreenLight.svg" alt="Project fullscreen button" />
                     </div>
                 </div>
@@ -56,7 +56,7 @@ else
         <div class="projectWindow projectWindowLight">
             <div class="projectWindowHeader headerLight">
                 @project.Title
-                <div id="closeProjectWindow" class="aaButtonLight closeProjectButton" onclick="closeProjectFullscreen()"><img src="icons/closeLight.svg" /></div>
+                <div id="closeProjectWindow" class="aa-button closeProjectButton" onclick="closeProjectFullscreen()"><img src="icons/closeLight.svg" /></div>
             </div>
             <div class="projectContentWrapper projectContentWrapperLight all-text">
                 <div class="projectContent">
