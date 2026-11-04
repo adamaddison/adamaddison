@@ -104,14 +104,6 @@ function setTheme(theme)
             element.setAttribute("src", "icons/backLight.svg");
         });
 
-        var allHeaders = $('.headerDark');
-        allHeaders.removeClass('headerDark');
-        allHeaders.addClass('headerLight');
-
-        var projectContentWrappers = $('.projectContentWrapperDark');
-        projectContentWrappers.removeClass('projectContentWrapperDark');
-        projectContentWrappers.addClass('projectContentWrapperLight');
-
         var workEducationHeader = $('.appSelectListHeaderDark');
         workEducationHeader.removeClass('appSelectListHeaderDark');
         workEducationHeader.addClass('appSelectListHeaderLight');
@@ -182,14 +174,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var allHeaders = $('.headerLight');
-        allHeaders.removeClass('headerLight');
-        allHeaders.addClass('headerDark');
-
-        var projectContentWrappers = $('.projectContentWrapperLight');
-        projectContentWrappers.removeClass('projectContentWrapperLight');
-        projectContentWrappers.addClass('projectContentWrapperDark');
 
         var workEducationHeader = $('.appSelectListHeaderLight');
         workEducationHeader.removeClass('appSelectListHeaderLight');

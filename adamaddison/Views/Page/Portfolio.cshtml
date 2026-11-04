@@ -54,11 +54,11 @@ else
     @foreach(var project in Model.Projects)
     {
         <div class="projectWindow projectWindowLight">
-            <div class="projectWindowHeader headerLight">
+            <div class="projectWindowHeader aa-header">
                 @project.Title
                 <div id="closeProjectWindow" class="aa-button closeProjectButton" onclick="closeProjectFullscreen()"><img src="icons/closeLight.svg" /></div>
             </div>
-            <div class="projectContentWrapper projectContentWrapperLight all-text">
+            <div class="projectContentWrapper project-content-wrapper-theme all-text">
                 <div class="projectContent">
                     <div class="projectContentImages">
                         @foreach(var imageUrl in project.ScreenshotUrls)
