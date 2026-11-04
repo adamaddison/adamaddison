@@ -104,14 +104,6 @@ function setTheme(theme)
             element.setAttribute("src", "icons/backLight.svg");
         });
 
-        var menuItemValues = $('.menuItemValueDark');
-        menuItemValues.removeClass('menuItemValueDark');
-        menuItemValues.addClass('menuItemValueLight');
-
-        var organisationLocationText = $('.organisationLocationTextDark');
-        organisationLocationText.removeClass('organisationLocationTextDark');
-        organisationLocationText.addClass('organisationLocationTextLight');
-
         var allHeaders = $('.headerDark');
         allHeaders.removeClass('headerDark');
         allHeaders.addClass('headerLight');
@@ -190,14 +182,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var menuItemValues = $('.menuItemValueLight');
-        menuItemValues.removeClass('menuItemValueLight');
-        menuItemValues.addClass('menuItemValueDark');
-
-        var organisationLocationText = $('.organisationLocationTextLight');
-        organisationLocationText.removeClass('organisationLocationTextLight');
-        organisationLocationText.addClass('organisationLocationTextDark');
 
         var allHeaders = $('.headerLight');
         allHeaders.removeClass('headerLight');
