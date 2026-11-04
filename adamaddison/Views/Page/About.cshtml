@@ -9,35 +9,35 @@
 else
 {
         <div class="container container-fluid">
-            <div class="infoContainerLight row g-md-0" id="aboutContainer">
+            <div class="info-container row g-md-0" id="aboutContainer">
 
                 <div class="col-md-5">
                     <img src="@Model.ImageUrls[0]" class="aboutImage" />
                 </div>
                 <div class="col-md-7 px-2">
-                    <h class="textLight appHeading" id="aboutHeader">About this website</h>
+                    <h class="all-text appHeading" id="aboutHeader">About this website</h>
                     @foreach(var descriptionParagraph in Model.Description)
                     {
-                        <p class="textLight">@descriptionParagraph</p>
+                        <p class="all-text">@descriptionParagraph</p>
                     }
                 </div>
         
             </div>
 
             <div class="row justify-content-center mt-1">
-                <div class="infoContainerLight col-md-4 col-xxl-3 pb-0">
+                <div class="info-container col-md-4 col-xxl-3 pb-0">
 
                     <div class="themeRadioButtons">
-                        <div id="themeRadioButtonsTitle" class="textLight">Website theme:</div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonAuto" onclick="setAutoTheme();toggleThemeRadioButtons();">
+                        <div id="themeRadioButtonsTitle" class="all-text">Website theme:</div>
+                        <div class="radioButtonRow two-column-row" id="radioButtonAuto" onclick="setAutoTheme();toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1 aaRadioButtonSelectedText">System / Auto</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuterLight"> <div class="aaRadioButtonInner aaRadioButtonInnerLight aaRadioButtonSelectedHideInner"></div><div class="aaRadioButtonCircle aaRadioButtonCircleLight aaRadioButtonSelected"></div> </div>
                         </div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonLight" onclick="setTheme(0);toggleThemeRadioButtons();">
+                        <div class="radioButtonRow two-column-row" id="radioButtonLight" onclick="setTheme(0);toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1">Light</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuterLight"> <div class="aaRadioButtonInner aaRadioButtonInnerLight"></div><div class="aaRadioButtonCircle aaRadioButtonCircleLight"></div> </div>
                         </div>
-                        <div class="radioButtonRow twoColumnRowLight" id="radioButtonDark" onclick="setTheme(1);toggleThemeRadioButtons();">
+                        <div class="radioButtonRow two-column-row" id="radioButtonDark" onclick="setTheme(1);toggleThemeRadioButtons();">
                             <span class="twoColumnRowCol1">Dark</span>
                             <div class="twoColumnRowCol2 aaRadioButtonOuterLight"> <div class="aaRadioButtonInner aaRadioButtonInnerLight"></div><div class="aaRadioButtonCircle aaRadioButtonCircleLight"></div> </div>
                         </div>

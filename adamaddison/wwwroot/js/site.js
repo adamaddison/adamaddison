@@ -88,22 +88,6 @@ function setTheme(theme)
 {
     if(theme == Theme.light)
     {
-        var infoContainers = $('.infoContainerDark');
-        infoContainers.removeClass('infoContainerDark');
-        infoContainers.addClass('infoContainerLight');
-
-        var allText = $('.textDark');
-        allText.removeClass('textDark');
-        allText.addClass('textLight');
-
-        var appBackground = $('.appBackgroundDark');
-        appBackground.removeClass('appBackgroundDark');
-        appBackground.addClass('appBackgroundLight');
-
-        var rowColumns = $('.twoColumnRowDark')
-        rowColumns.removeClass('twoColumnRowDark');
-        rowColumns.addClass('twoColumnRowLight');
-
         var menuBarContainer = $('.menuBarContainerDark');
         menuBarContainer.removeClass('menuBarContainerDark');
         menuBarContainer.addClass('menuBarContainerLight');
@@ -116,11 +100,21 @@ function setTheme(theme)
         buttonBorders.removeClass('aaButtonBorderDark');
         buttonBorders.addClass('aaButtonBorderLight');
 
-        $("img[src='icons/closeDark.svg']").attr('src', 'icons/closeLight.svg');
-        $("img[src='icons/fullscreenDark.svg']").attr('src', 'icons/fullscreenLight.svg');
-        $("img[src='icons/globeDark.svg']").attr('src', 'icons/globeLight.svg');
-        $("img[src='icons/githubDark.svg']").attr('src', 'icons/githubLight.svg');
-        $("img[src='icons/backDark.svg']").attr('src', 'icons/backLight.svg');
+        document.querySelectorAll("img[src='icons/closeDark.svg']").forEach(element => {
+            element.setAttribute("src", "icons/closeLight.svg");
+        });
+        document.querySelectorAll("img[src='icons/fullscreenDark.svg']").forEach(element => {
+            element.setAttribute("src", "icons/fullscreenLight.svg");
+        });
+        document.querySelectorAll("img[src='icons/globeDark.svg']").forEach(element => {
+            element.setAttribute("src", "icons/globeLight.svg");
+        });
+        document.querySelectorAll("img[src='icons/githubDark.svg']").forEach(element => {
+            element.setAttribute("src", "icons/githubLight.svg");
+        });
+        document.querySelectorAll("img[src='icons/backDark.svg']").forEach(element => {
+            element.setAttribute("src", "icons/backLight.svg");
+        });
 
         var menuItemValues = $('.menuItemValueDark');
         menuItemValues.removeClass('menuItemValueDark');
@@ -192,22 +186,6 @@ function setTheme(theme)
     }
     else if(theme == Theme.dark)
     {
-        var infoContainers = $('.infoContainerLight');
-        infoContainers.removeClass('infoContainerLight');
-        infoContainers.addClass('infoContainerDark');
-
-        var allText = $('.textLight');
-        allText.removeClass('textLight');
-        allText.addClass('textDark');
-
-        var appBackground = $('.appBackgroundLight');
-        appBackground.removeClass('appBackgroundLight');
-        appBackground.addClass('appBackgroundDark');
-
-        var rowColumns = $('.twoColumnRowLight')
-        rowColumns.removeClass('twoColumnRowLight');
-        rowColumns.addClass('twoColumnRowDark');
-
         var menuBarContainer = $('.menuBarContainerLight');
         menuBarContainer.removeClass('menuBarContainerLight');
         menuBarContainer.addClass('menuBarContainerDark');
@@ -220,11 +198,22 @@ function setTheme(theme)
         buttonBorders.removeClass('aaButtonBorderLight');
         buttonBorders.addClass('aaButtonBorderDark');
 
-        $("img[src='icons/closeLight.svg']").attr('src', 'icons/closeDark.svg');
-        $("img[src='icons/fullscreenLight.svg']").attr('src', 'icons/fullscreenDark.svg');
-        $("img[src='icons/globeLight.svg']").attr('src', 'icons/globeDark.svg');
-        $("img[src='icons/githubLight.svg']").attr('src', 'icons/githubDark.svg');
+        document.querySelectorAll("img[src='icons/closeLight.svg']").forEach(element => {
+            element.setAttribute("src", "icons/closeDark.svg");
+        });
+        document.querySelectorAll("img[src='icons/fullscreenLight.svg']").forEach(element => {
+            element.setAttribute("src", "icons/fullscreenDark.svg");
+        });
+        document.querySelectorAll("img[src='icons/globeLight.svg']").forEach(element => {
+            element.setAttribute("src", "icons/globeDark.svg");
+        });
+        document.querySelectorAll("img[src='icons/githubLight.svg']").forEach(element => {
+            element.setAttribute("src", "icons/githubDark.svg");
+        });
         $("img[src='icons/backLight.svg']").attr('src', 'icons/backDark.svg');
+        document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
+            element.setAttribute("src", "icons/backDark.svg");
+        });
 
         var menuItemValues = $('.menuItemValueLight');
         menuItemValues.removeClass('menuItemValueLight');
@@ -299,6 +288,7 @@ function setTheme(theme)
     localStorage["aa.autoTheme"] = false;
     appTheme = theme;
     localStorage["aa.theme"] = theme;
+    document.documentElement.setAttribute("data-theme-aa", theme);
 }
 
 var setAutoTheme = function()

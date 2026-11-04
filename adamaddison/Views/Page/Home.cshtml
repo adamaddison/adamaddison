@@ -8,13 +8,13 @@
 }
 else
 {
-<div id="profileImageAndContactTextContainer" class="infoContainerLight">
+<div id="profileImageAndContactTextContainer" class="info-container">
     <img src="@Model.ProfileImageUrl" id="profileImage" />
         <div id="contactTable">
             @{var i = 0;}
             @foreach(var contact in Model.ContactInfoList)
             {
-                <div class="twoColumnRowLight @(i == 0 ? "firstRow" : "")">
+                <div class="two-column-row @(i == 0 ? "firstRow" : "")">
                     <div class="twoColumnRowCol1">@contact.Key</div>
                     @if(contact.Value.Contains(".com") && !contact.Key.Contains("Email"))
                     {
@@ -29,7 +29,7 @@ else
             }
         </div>
 </div>
-<div id="bioTextContainer" class="infoContainerLight">
-    <div id="bioText" class="textLight">@Html.Raw(Model.BioText)</div>
+<div id="bioTextContainer" class="info-container">
+    <div id="bioText" class="all-text">@Html.Raw(Model.BioText)</div>
 </div>
 }
