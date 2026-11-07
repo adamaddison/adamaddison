@@ -104,18 +104,6 @@ function setTheme(theme)
             element.setAttribute("src", "icons/backLight.svg");
         });
 
-        var workEducationHeader = $('.appSelectListHeaderDark');
-        workEducationHeader.removeClass('appSelectListHeaderDark');
-        workEducationHeader.addClass('appSelectListHeaderLight');
-
-        var workEducationItem = $('.appSelectListItemDark');
-        workEducationItem.removeClass('appSelectListItemDark');
-        workEducationItem.addClass('appSelectListItemLight');
-
-        var workEducationList = $('.appSelectListDark');
-        workEducationList.removeClass('appSelectListDark');
-        workEducationList.addClass('appSelectListLight');
-
         var allTables = $('.schoolGradeTableDark');
         allTables.removeClass('schoolGradeTableDark');
         allTables.addClass('schoolGradeTableLight');
@@ -174,18 +162,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var workEducationHeader = $('.appSelectListHeaderLight');
-        workEducationHeader.removeClass('appSelectListHeaderLight');
-        workEducationHeader.addClass('appSelectListHeaderDark');
-
-        var workEducationItem = $('.appSelectListItemLight');
-        workEducationItem.removeClass('appSelectListItemLight');
-        workEducationItem.addClass('appSelectListItemDark');
-
-        var workEducationList = $('.appSelectListLight');
-        workEducationList.removeClass('appSelectListLight');
-        workEducationList.addClass('appSelectListDark');
 
         var allTables = $('.schoolGradeTableLight');
         allTables.removeClass('schoolGradeTableLight');

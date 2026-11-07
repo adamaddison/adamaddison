@@ -8,15 +8,15 @@
 }
 else
 {
-    <div id="organisationList" class="appSelectList appSelectListLight">
-        <div class="appSelectListHeader appSelectListHeaderLight">
+    <div id="organisationList" class="appSelectList app-select-list-theme">
+        <div class="appSelectListHeader app-select-list-header-theme">
             <span>Work & Education History</span>
         </div>
         <div id="appSelectListContainer">
         @{ int i = 0; }
         @foreach(var organisation in Model.CompaniesAndSchools)
         {
-            <div class="all-text appSelectListItem appSelectListItemLight" onclick="selectOrganisation(@i)">@organisation.Name</div>
+            <div class="all-text appSelectListItem app-select-list-item-theme" onclick="selectOrganisation(@i)">@organisation.Name</div>
             i += 1;
         }
         <div class="appSelectListItemBuffer"></div>

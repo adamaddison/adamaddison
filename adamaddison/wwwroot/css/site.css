@@ -11,6 +11,10 @@
   --button-box-shadow: 0 1px #fff inset,0 1px #fff inset;
   --line-separator-colour: lightgray;
   --project-content-background: #f0f0f0;
+  --app-select-list-header-border-bottom: lightgray;
+  --app-select-list-item-border-bottom: rgb(188,188,188);
+  --app-select-list-background: #d2d2d2;
+  --app-select-list-border: #a7a7a7
 }
 [data-theme-aa="1"]
 {
@@ -25,6 +29,10 @@
   --button-box-shadow: 0 1px #b7b7b7 inset,0 1px #b7b7b7 inset;
   --line-separator-colour: rgb(111,111,111);
   --project-content-background: #000;
+  --app-select-list-header-border-bottom: rgb(90,90,90);
+  --app-select-list-item-border-bottom: rgb(111,111,111);
+  --app-select-list-background: #1b1b1b;
+  --app-select-list-border: rgb(111,111,111);
 }
 
 body
@@ -171,17 +179,11 @@ body
   text-align: center;
 }
 
-.appSelectListHeaderLight
+.app-select-list-header-theme
 {
-  background: white;
-  color: #000;
-  border-bottom: 1px solid lightgray;
-}
-.appSelectListHeaderDark
-{
-  background-color: #434343;
-  color: #fff;
-  border-bottom: 1px solid rgb(90,90,90);
+  background: var(--container-header-colour);
+  color: var(--all-text-colour);
+  border-bottom: 1px solid var(--app-select-list-header-border-bottom);
 }
 
 @media only screen and (min-width: 1000px)
@@ -218,15 +220,10 @@ body
   }
 }
 
-.appSelectListLight
+.app-select-list-theme
 {
-  background-color: #d2d2d2;
-  border: 1px solid #a7a7a7;
-}
-.appSelectListDark
-{
-  background-color: #1b1b1b;
-  border: 1px solid rgb(111,111,111);
+  background-color: var(--app-select-list-background);
+  border: 1px solid var(--app-select-list-border);
 }
 
 @media only screen and (min-width: 1000px)
@@ -275,19 +272,12 @@ body
   }
 }
 
-.appSelectListItemLight
+.app-select-list-item-theme
 {
   position: relative;
-  background-color: #fff;
-  color: #000;
-  border-bottom: 1px solid rgb(188,188,188);
-}
-.appSelectListItemDark
-{
-  position: relative;
-  background-color: #434343;
-  color: #fff;
-  border-bottom: 1px solid rgb(111,111,111);
+  background-color: var(--container-header-colour);
+  color: var(--all-text-colour);
+  border-bottom: 1px solid var(--app-select-list-item-border-bottom);
 }
 
 @media only screen and (min-width: 1000px)
