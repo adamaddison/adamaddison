@@ -18,6 +18,7 @@
   --school-grade-table-background: #d0d0d0;
   --school-grade-table-border-bottom: #8a8a8a;
   --alternating-row-background: #ddd;
+  --project-window-theme-shadow: none;
 }
 [data-theme-aa="1"]
 {
@@ -39,6 +40,7 @@
   --school-grade-table-background: #000;
   --school-grade-table-border-bottom: #808080;
   --alternating-row-background: #000;
+  --project-window-theme-shadow: 0 0 17px 6px #fffc;
 }
 
 body
@@ -474,17 +476,11 @@ body
   text-align: center;
   font-weight: bold;
 }
-.gradeTableFooterLight
+.grade-table-footer
 {
   font-weight: normal;
   font-size: 11pt;
-  border-top: 1px solid lightgray
-}
-.gradeTableFooterDark
-{
-  font-weight: normal;
-  font-size: 11pt;
-  border-top: 1px solid rgb(111,111,111)
+  border-top: 1px solid var(--line-separator-colour)
 }
 
 .all-text
@@ -1008,13 +1004,9 @@ body
     flex-flow: column;
   }
 }
-.projectWindowLight
+.project-window-theme
 {
-  box-shadow: none
-}
-.projectWindowDark
-{
-  box-shadow: 0 0 17px 6px #fffc;
+  box-shadow: var(--project-window-theme-shadow)
 }
 @media only screen and (min-width: 1000px)
 {
