@@ -14,7 +14,10 @@
   --app-select-list-header-border-bottom: lightgray;
   --app-select-list-item-border-bottom: rgb(188,188,188);
   --app-select-list-background: #d2d2d2;
-  --app-select-list-border: #a7a7a7
+  --app-select-list-border: #a7a7a7;
+  --school-grade-table-background: #d0d0d0;
+  --school-grade-table-border-bottom: #8a8a8a;
+  --alternating-row-background: #ddd;
 }
 [data-theme-aa="1"]
 {
@@ -33,6 +36,9 @@
   --app-select-list-item-border-bottom: rgb(111,111,111);
   --app-select-list-background: #1b1b1b;
   --app-select-list-border: rgb(111,111,111);
+  --school-grade-table-background: #000;
+  --school-grade-table-border-bottom: #808080;
+  --alternating-row-background: #000;
 }
 
 body
@@ -451,25 +457,16 @@ body
   padding-left: 6px;
   padding-top: 3px;
 }
-.schoolGradeTableLight thead
+
+.school-grade-table-theme thead
 {
-  background-color: #d0d0d0;
-  border-bottom: 1px solid #8a8a8a;
-  color: #000
+  background-color: var(--school-grade-table-background);
+  border-bottom: 1px solid var(--school-grade-table-border-bottom);
+  color: var(--all-text-colour)
 }
-.schoolGradeTableDark thead
+.alternating-row
 {
-  background-color: #000;
-  border-bottom: 1px solid #808080;
-  color: #fff
-}
-.alternatingRowLight
-{
-  background-color: #ddd;
-}
-.alternatingRowDark
-{
-  background-color: #000;
+  background-color: var(--alternating-row-background);
 }
 .gradeTableCaption
 {

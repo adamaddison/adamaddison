@@ -104,14 +104,6 @@ function setTheme(theme)
             element.setAttribute("src", "icons/backLight.svg");
         });
 
-        var allTables = $('.schoolGradeTableDark');
-        allTables.removeClass('schoolGradeTableDark');
-        allTables.addClass('schoolGradeTableLight');
-
-        var alternatingRows = $('.alternatingRowDark');
-        alternatingRows.removeClass('alternatingRowDark');
-        alternatingRows.addClass('alternatingRowLight');
-
         var projectWindows = $('.projectWindowDark');
         projectWindows.removeClass('projectWindowDark');
         projectWindows.addClass('projectWindowLight');
@@ -162,14 +154,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var allTables = $('.schoolGradeTableLight');
-        allTables.removeClass('schoolGradeTableLight');
-        allTables.addClass('schoolGradeTableDark');
-
-        var alternatingRows = $('.alternatingRowLight');
-        alternatingRows.removeClass('alternatingRowLight');
-        alternatingRows.addClass('alternatingRowDark');
 
         var projectWindows = $('.projectWindowLight');
         projectWindows.removeClass('projectWindowLight');
