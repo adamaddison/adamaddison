@@ -19,6 +19,10 @@
   --school-grade-table-border-bottom: #8a8a8a;
   --alternating-row-background: #ddd;
   --project-window-theme-shadow: none;
+  --aa-radio-button-outer-background: linear-gradient(#fff, #c0c0c0);
+  --aa-radio-button-outer-border: #c0c0c0;
+  --aa-radio-button-inner-background: linear-gradient(#c0c0c0, #fff);
+  --aa-radio-button-circle-background: #4a4a4a;
 }
 [data-theme-aa="1"]
 {
@@ -41,6 +45,10 @@
   --school-grade-table-border-bottom: #808080;
   --alternating-row-background: #000;
   --project-window-theme-shadow: 0 0 17px 6px #fffc;
+  --aa-radio-button-outer-background: linear-gradient(#838383, #000);
+  --aa-radio-button-outer-border: #000;
+  --aa-radio-button-inner-background: linear-gradient(#000, #838383);
+  --aa-radio-button-circle-background: #ddd;
 }
 
 body
@@ -1190,26 +1198,17 @@ body
   margin: 0px !important
 }
 
-.aaRadioButtonOuterLight
+.aa-radio-button-outer
 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: linear-gradient(#fff, #c0c0c0);
-  border: 1px solid #c0c0c0;
-  box-sizing: content-box;
-}
-.aaRadioButtonOuterDark
-{
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: linear-gradient(#838383, #000);
-  border: 1px solid #000;
+  background: var(--aa-radio-button-outer-background);
+  border: 1px solid var(--aa-radio-button-outer-border);
   box-sizing: content-box;
 }
 
-.aaRadioButtonInnerLight
+.aa-radio-button-inner-theme
 {
   position: absolute;
   width: 14px;
@@ -1217,17 +1216,7 @@ body
   left: 1px;
   top: 1px;
   border-radius: 50%;
-  background: linear-gradient(#c0c0c0, #fff);
-}
-.aaRadioButtonInnerDark
-{
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  left: 1px;
-  top: 1px;
-  border-radius: 50%;
-  background: linear-gradient(#000, #838383);
+  background: var(--aa-radio-button-inner-background);
 }
 
 #themeRadioButtonsTitle
@@ -1238,7 +1227,7 @@ body
   font-size: 12pt;
 }
 
-.aaRadioButtonCircleLight
+.aa-radio-button-circle-theme
 {
   position: absolute;
   width: 8px;
@@ -1246,18 +1235,7 @@ body
   left: 4px;
   top: 4px;
   border-radius: 50%;
-  background: #4a4a4a;
-  display: none;
-}
-.aaRadioButtonCircleDark
-{
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 4px;
-  top: 4px;
-  border-radius: 50%;
-  background: #ddd;
+  background: var(--aa-radio-button-circle-background);
   display: none;
 }
 

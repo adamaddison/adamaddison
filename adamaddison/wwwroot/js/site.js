@@ -104,18 +104,6 @@ function setTheme(theme)
             element.setAttribute("src", "icons/backLight.svg");
         });
 
-        var radioButtonOuter = $('.aaRadioButtonOuterDark');
-        radioButtonOuter.removeClass('aaRadioButtonOuterDark');
-        radioButtonOuter.addClass('aaRadioButtonOuterLight');
-
-        var radioButtonInner = $('.aaRadioButtonInnerDark');
-        radioButtonInner.removeClass('aaRadioButtonInnerDark');
-        radioButtonInner.addClass('aaRadioButtonInnerLight');
-
-        var radioButtonCircle = $('.aaRadioButtonCircleDark');
-        radioButtonCircle.removeClass('aaRadioButtonCircleDark');
-        radioButtonCircle.addClass('aaRadioButtonCircleLight');
-
         var menuLines = $('.menuIconLineDark');
         menuLines.removeClass('menuIconLineDark');
         menuLines.addClass('menuIconLineLight');
@@ -146,18 +134,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var radioButtonOuter = $('.aaRadioButtonOuterLight');
-        radioButtonOuter.removeClass('aaRadioButtonOuterLight');
-        radioButtonOuter.addClass('aaRadioButtonOuterDark');
-
-        var radioButtonInner = $('.aaRadioButtonInnerLight');
-        radioButtonInner.removeClass('aaRadioButtonInnerLight');
-        radioButtonInner.addClass('aaRadioButtonInnerDark');
-
-        var radioButtonCircle = $('.aaRadioButtonCircleLight');
-        radioButtonCircle.removeClass('aaRadioButtonCircleLight');
-        radioButtonCircle.addClass('aaRadioButtonCircleDark');
 
         var menuLines = $('.menuIconLineLight');
         menuLines.removeClass('menuIconLineLight');
