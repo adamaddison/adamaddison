@@ -171,9 +171,9 @@ var initialiseTheme = function()
         toggleThemeRadioButtons();
     }
 }
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', () => {
     initialiseTheme();
-});
+})
 
 window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
             if(appAutoTheme)
