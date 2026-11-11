@@ -11,21 +11,22 @@ let appAutoTheme = true;
 function togglePopoutMenu()
 {
     showPopoutMenu = !showPopoutMenu;
-    showPopoutMenu ? $('#menuBarMobilePopout').addClass('showMenuBarMobilePopout')
-                   : $('#menuBarMobilePopout').removeClass('showMenuBarMobilePopout');
-    showPopoutMenu ? $('#menuBarMobilePopoutBackground').addClass('opacityFull')
-                   : $('#menuBarMobilePopoutBackground').removeClass('opacityFull');
+
+    document.getElementById('menuBarMobilePopout').classList.toggle('showMenuBarMobilePopout', Boolean(showPopoutMenu));
+    document.getElementById('menuBarMobilePopoutBackground').classList.toggle('opacityFull', Boolean(showPopoutMenu));
 }
 
 function openProjectFullscreen(projectIndex)
 {
-    $(".projectWindow").eq(projectIndex).addClass("opacityFull");
-    $("#projectWindowGreyedOutBackground").addClass("opacityFull");
+    document.querySelectorAll('.projectWindow')[projectIndex].classList.add('opacityFull');
+    document.getElementById('projectWindowGreyedOutBackground').classList.add('opacityFull');
 }
 function closeProjectFullscreen()
 {
-    $(".projectWindow").removeClass("opacityFull");
-    $("#projectWindowGreyedOutBackground").removeClass("opacityFull");
+    document.querySelectorAll('.projectWindow').forEach((element) => {
+        element.classList.remove('opacityFull');
+    });
+    document.getElementById('projectWindowGreyedOutBackground').classList.remove('opacityFull');
 }
 
 // Making the first organisation info visible / selected on load for desktop
@@ -118,7 +119,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/githubLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/githubDark.svg");
         });
-        $("img[src='icons/backLight.svg']").attr('src', 'icons/backDark.svg');
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
