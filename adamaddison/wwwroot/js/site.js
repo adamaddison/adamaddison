@@ -103,18 +103,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backDark.svg']").forEach(element => {
             element.setAttribute("src", "icons/backLight.svg");
         });
-
-        var menuLines = $('.menuIconLineDark');
-        menuLines.removeClass('menuIconLineDark');
-        menuLines.addClass('menuIconLineLight');
-
-        var mobileMenu = $('.menuBarContainerMobileDark');
-        mobileMenu.removeClass('menuBarContainerMobileDark');
-        mobileMenu.addClass('menuBarContainerMobileLight');
-
-        var mobileMenuItem = $('.menuItemMobileDark');
-        mobileMenuItem.removeClass('menuItemMobileDark');
-        mobileMenuItem.addClass('menuItemMobileLight');
     }
     else if(theme == Theme.dark)
     {
@@ -134,18 +122,6 @@ function setTheme(theme)
         document.querySelectorAll("img[src='icons/backLight.svg']").forEach(element => {
             element.setAttribute("src", "icons/backDark.svg");
         });
-
-        var menuLines = $('.menuIconLineLight');
-        menuLines.removeClass('menuIconLineLight');
-        menuLines.addClass('menuIconLineDark');
-
-        var mobileMenu = $('.menuBarContainerMobileLight');
-        mobileMenu.removeClass('menuBarContainerMobileLight');
-        mobileMenu.addClass('menuBarContainerMobileDark');
-
-        var mobileMenuItem = $('.menuItemMobileLight');
-        mobileMenuItem.removeClass('menuItemMobileLight');
-        mobileMenuItem.addClass('menuItemMobileDark');
     }
 
     appAutoTheme = false;

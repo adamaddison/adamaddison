@@ -538,15 +538,10 @@ body
   border-bottom: 1px solid var(--menu-bar-border-bottom);
 }
 
-.menuBarContainerMobileLight
+.menu-bar-container-mobile-theme
 {
-  background: #fff;
-  border-top: 1px solid lightgray
-}
-.menuBarContainerMobileDark
-{
-  background: #434343;
-  border-top: 1px solid rgb(111,111,111);
+  background: var(--container-header-colour);
+  border-top: 1px solid var(--menu-bar-border-bottom)
 }
 
 .menuItem
@@ -823,13 +818,9 @@ body
   top: 3px;
   margin-top: 4px;
 }
-.menuIconLineLight
+.menu-icon-line-theme
 {
-  background: #000
-}
-.menuIconLineDark
-{
-  background: #fff
+  background: var(--all-text-colour)
 }
 .firstMenuLine
 {
@@ -903,16 +894,10 @@ body
   opacity: 100% !important;
 }
 
-.menuItemMobileLight
+.menu-item-mobile
 {
   text-align: center;
-  border-top: 1px solid lightgray
-}
-
-.menuItemMobileDark
-{
-  text-align: center;
-  border-top: 1px solid rgb(111,111,111)
+  border-top: 1px solid var(--menu-bar-border-bottom)
 }
 
 .firstMenuItemMobile
@@ -920,7 +905,7 @@ body
   border-top: 0px
 }
 
-.menuItemMobileLight > span, .menuItemMobileDark > span
+.menu-item-mobile > span
 {
   font-size: 18pt;
   font-weight: bold;
