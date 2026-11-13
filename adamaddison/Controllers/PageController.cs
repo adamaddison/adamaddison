@@ -16,7 +16,7 @@ namespace adamaddison.Controllers
 
         [HttpGet]
         [Route("")]
-        [Route("Home")]
+        [Route("home")]
         public async Task<IActionResult> Home()
         {
             try
@@ -34,7 +34,7 @@ namespace adamaddison.Controllers
         }
 
         [HttpGet]
-        [Route("Portfolio")]
+        [Route("portfolio")]
         public async Task<IActionResult> Portfolio()
         {
             try
@@ -52,7 +52,7 @@ namespace adamaddison.Controllers
         }
 
         [HttpGet]
-        [Route("WorkAndEducation")]
+        [Route("work-and-education")]
         public async Task<IActionResult> WorkAndEducation()
         {
             try
@@ -70,7 +70,7 @@ namespace adamaddison.Controllers
         }
 
         [HttpGet]
-        [Route("Experience")]
+        [Route("experience")]
         public async Task<IActionResult> Experience()
         {
             try
@@ -88,7 +88,7 @@ namespace adamaddison.Controllers
         }
 
         [HttpGet]
-        [Route("About")]
+        [Route("about")]
         public async Task<IActionResult> About()
         {
             try
