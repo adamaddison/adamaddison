@@ -30,57 +30,58 @@ function closeProjectFullscreen()
 }
 
 // Making the first organisation info visible / selected on load for desktop
-$(document).ready(function(){
-    $('.organisationContentGrid').eq(0).addClass('displayIsBlock');
-    $('.appSelectListItem').eq(0).addClass('appListItemSelected');
-});
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.organisationContentGrid')[0]?.classList.add('displayIsBlock');
+    document.querySelectorAll('.appSelectListItem')[0]?.classList.add('appListItemSelected');
+})
 
 function selectOrganisation(index)
 {
-    $('.organisationContentGrid').removeClass('displayIsBlock');
-    $('.appSelectListItem').removeClass('appListItemSelected');
-    $('.appSelectListItem').removeClass('appListItemSelectedMobile');
+    const organisationContentGrids = document.querySelectorAll('.organisationContentGrid');
+    const appSelectListItems = document.querySelectorAll('.appSelectListItem');
 
-    $('.organisationContentGrid').eq(index).addClass('displayIsBlock');
-    $('.appSelectListItem').eq(index).addClass('appListItemSelected');
-    $('.appSelectListItem').eq(index).addClass('appListItemSelectedMobile');
+    organisationContentGrids.forEach(element => { element.classList.remove('displayIsBlock'); });
+    appSelectListItems.forEach(element => { element.classList.remove('appListItemSelected', 'appListItemSelectedMobile'); });
 
-    $('#organisationList').addClass('hideOrganisationListMobile');
-    $('#selectListContent').addClass('showSelectListContent');
+    organisationContentGrids[index].classList.add('displayIsBlock');
+    appSelectListItems[index].classList.add('appListItemSelected', 'appListItemSelectedMobile');
+
+    document.getElementById('organisationList').classList.add('hideOrganisationListMobile');
+    document.getElementById('selectListContent').classList.add('showSelectListContent');
 }
 
 function showOrganisationListMobile()
 {
-    $('#organisationList').removeClass('hideOrganisationListMobile');
-    $('#selectListContent').removeClass('showSelectListContent');
+    document.getElementById('organisationList').classList.remove('hideOrganisationListMobile');
+    document.getElementById('selectListContent').classList.remove('showSelectListContent');
 }
 
 
 function toggleThemeRadioButtons()
 {
-    $('.aaRadioButtonSelectedText').removeClass('aaRadioButtonSelectedText');
-    $('.aaRadioButtonSelected').removeClass('aaRadioButtonSelected');
-    $('.aaRadioButtonSelectedHideInner').removeClass('aaRadioButtonSelectedHideInner');
+    document.querySelectorAll('.aaRadioButtonSelectedText').forEach(element => { element.classList.remove('aaRadioButtonSelectedText'); })
+    document.querySelectorAll('.aaRadioButtonSelected').forEach(element => { element.classList.remove('aaRadioButtonSelected'); })
+    document.querySelectorAll('.aaRadioButtonSelectedHideInner').forEach(element => { element.classList.remove('aaRadioButtonSelectedHideInner'); })
 
     if(appAutoTheme)
     {
-        $('#radioButtonAuto .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
-        $('#radioButtonAuto .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
-        $('#radioButtonAuto .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+        document.querySelectorAll('#radioButtonAuto .twoColumnRowCol1').forEach(element => { element.classList.add('aaRadioButtonSelectedText'); });
+        document.querySelectorAll('#radioButtonAuto .aaRadioButtonCircle').forEach(element => { element.classList.add('aaRadioButtonSelected'); });
+        document.querySelectorAll('#radioButtonAuto .aaRadioButtonInner').forEach(element => { element.classList.add('aaRadioButtonSelectedHideInner'); });
     }
     else
     {
         if(appTheme == Theme.light)
         {
-            $('#radioButtonLight .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
-            $('#radioButtonLight .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
-            $('#radioButtonLight .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+            document.querySelectorAll('#radioButtonLight .twoColumnRowCol1').forEach(element => { element.classList.add('aaRadioButtonSelectedText'); });
+            document.querySelectorAll('#radioButtonLight .aaRadioButtonCircle').forEach(element => { element.classList.add('aaRadioButtonSelected'); });
+            document.querySelectorAll('#radioButtonLight .aaRadioButtonInner').forEach(element => { element.classList.add('aaRadioButtonSelectedHideInner'); });
         }
         else if(appTheme == Theme.dark)
         {
-            $('#radioButtonDark .twoColumnRowCol1').addClass('aaRadioButtonSelectedText');
-            $('#radioButtonDark .aaRadioButtonCircle').addClass('aaRadioButtonSelected');
-            $('#radioButtonDark .aaRadioButtonInner').addClass('aaRadioButtonSelectedHideInner');
+            document.querySelectorAll('#radioButtonDark .twoColumnRowCol1').forEach(element => { element.classList.add('aaRadioButtonSelectedText'); });
+            document.querySelectorAll('#radioButtonDark .aaRadioButtonCircle').forEach(element => { element.classList.add('aaRadioButtonSelected'); });
+            document.querySelectorAll('#radioButtonDark .aaRadioButtonInner').forEach(element => { element.classList.add('aaRadioButtonSelectedHideInner'); });
         }
     }   
 }
